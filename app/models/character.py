@@ -14,10 +14,10 @@ class Character(db.Model):
     wisdom = db.Column(db.Integer, nullable=False)
     intelligence = db.Column(db.Integer, nullable=False)
 
-    location = db.relationship("Location", back_populates="character")
-    user = db.relationship("User", back_populates="character")
-    item = db.relationship("Item", lazy="dynamic", secondary=characteritems,
-                            back_populates="character")
+    location = db.relationship("Location", back_populates="characters")
+    user = db.relationship("User", back_populates="characters")
+    items = db.relationship("Item", lazy="dynamic", secondary=characteritems,
+                            back_populates="characters")
 
     def to_dict(self):
         return {

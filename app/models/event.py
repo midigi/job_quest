@@ -9,8 +9,8 @@ class Event(db.Model):
     name = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(100))
 
-    location = db.relationship("Location", back_populates="event")
-    option = db.relationship("Option", back_populates="event")
+    location = db.relationship("Location", back_populates="events")
+    options = db.relationship("Option", back_populates="event")
 
     def to_dict(self):
         return {

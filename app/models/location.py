@@ -8,8 +8,8 @@ class Location(db.Model):
     name = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(100))
 
-    character = db.relationship("Character", back_populates="location")
-    event = db.relationship("Event", back_populates="location")
+    characters = db.relationship("Character", back_populates="location")
+    events = db.relationship("Event", back_populates="location")
 
     def to_dict(self):
         return {

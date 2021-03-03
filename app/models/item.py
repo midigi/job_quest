@@ -10,9 +10,10 @@ class Item(db.Model):
     description = db.Column(db.String(100))
     cost = db.Column(db.Integer)
 
-    option = db.relationship("Option", back_populates="item")
-    character = db.relationship("Character", lazy="dynamic", secondary=characteritems,
-                            back_populates="item")
+    required_opt = db.relationship("Option", back_populates="required_item", foreign_keys="Option.item_id")
+    rewarded_opt = db.relationship("Option", back_populates="reward_item", foreign_keys="Option.reward_item_id")
+    characters = db.relationship("Character", lazy="dynamic", secondary=characteritems,
+                            back_populates="items")
 
     def to_dict(self):
         return {

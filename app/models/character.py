@@ -7,7 +7,7 @@ class Character(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    pic_url = db.Column(db.String(100), nullable=False)
+    pic_url = db.Column(db.String(200), nullable=False)
     location_id = db.Column(db.Integer, db.ForeignKey("locations.id"), nullable=False)
     stamina = db.Column(db.Integer, nullable=False)
     mental_health = db.Column(db.Integer, nullable=False)

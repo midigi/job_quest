@@ -6,8 +6,8 @@ class Item(db.Model):
     __tablename__ = 'items'
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), nullable=False)
-    description = db.Column(db.String(100))
+    name = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.String(500))
     cost = db.Column(db.Integer)
 
     required_opt = db.relationship("Option", back_populates="required_item", foreign_keys="Option.item_id")

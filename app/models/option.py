@@ -8,9 +8,9 @@ class Option(db.Model):
     item_id = db.Column(db.Integer, db.ForeignKey("items.id"))
     reward_item_id = db.Column(db.Integer, db.ForeignKey("items.id"))
     event_id = db.Column(db.Integer, db.ForeignKey("events.id"), nullable=False)
-    name = db.Column(db.String(50), nullable=False)
-    positive_contingency = db.Column(db.String(50))
-    negative_contingency = db.Column(db.String(50))
+    name = db.Column(db.String(100), nullable=False)
+    positive_contingency = db.Column(db.String(500))
+    negative_contingency = db.Column(db.String(500))
 
     event = db.relationship("Event", back_populates="options")
     required_item = db.relationship("Item", back_populates="required_opt", foreign_keys="Option.item_id")

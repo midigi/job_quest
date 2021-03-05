@@ -26,6 +26,13 @@ export const createUser = (user) => async (dispatch) => {
     dispatch(setUser(data));
 };
 
+export const restoreUser = () => async (dispatch) => {
+  const res = await fetch("/api/auth/");
+  const data = await res.json();
+  if (res.ok) {
+    dispatch(setUser(data));
+  }
+};
 
 
 const initialState = { user: null };

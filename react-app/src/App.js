@@ -6,25 +6,32 @@ import NavBar from "./components/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
+import Home from "./components/Home";
 import { authenticate } from "./services/auth";
 import {useDispatch} from 'react-redux';
 import {setUser} from './store/session';
+import { restoreUser } from "./store/session";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async() => {
-      const user = await authenticate();
-      if (!user.errors) {
-        dispatch(setUser(user)).then(setLoaded(true));
-      }
-      else{
-        setLoaded(true);
-      }
-    })();
+    dispatch(restoreUser()).then(() => {
+      setLoaded(true);
+    });
   }, []);
+  // useEffect(() => {
+  //   (async() => {
+  //     const user = await authenticate();
+  //     if (!user.errors) {
+  //       dispatch(setUser(user)).then(setLoaded(true));
+  //     }
+  //     else{
+  //       setLoaded(true);
+  //     }
+  //   })();
+  // }, []);
 
   if (!loaded) {
     return null;
@@ -48,8 +55,8 @@ function App() {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path="/" exact={true} >
-          <NavBar  />
-          <h1>My Home Page</h1>
+          <NavBar />
+          <Home />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

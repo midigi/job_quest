@@ -1,0 +1,95 @@
+.map_tile {
+  width: 100px;
+  height: 100px;
+  /* position: relative;
+  display: inline-block; */
+}
+
+.outer_map {
+  /* height: 100%;
+  width: 100%; */
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-areas:
+    "house house blank blank stadium stadium blank2 blank2 lib lib"
+    "house house blank blank stadium stadium blank2 blank2 lib lib"
+    "blank3 blank3 blank4 blank4 blank4 blank4 blank4 blank4 blank5 blank5"
+    "blank3 blank3 blank4 blank4 blank4 blank4 blank4 blank4 blank5 blank5";
+  /* "blank blank blank blank stadium stadium stadium blank blank blank"
+    "blank blank blank blank stadium stadium stadium blank blank blank"
+    "blank blank blank blank stadium stadium stadium blank blank blank"
+    "blank blank blank blank stadium stadium stadium blank blank blank"
+    "blank blank blank blank stadium stadium stadium blank blank blank"
+    "blank blank blank blank stadium stadium stadium blank blank blank"
+    "blank blank blank blank stadium stadium stadium blank blank blank"; */
+  gap: 7px;
+  margin: 5vh;
+  border: 1px solid black;
+}
+
+.blank_tile {
+  width: 100%;
+  height: 100%;
+  grid-area: blank;
+}
+.blank_tile2 {
+  width: 100%;
+  height: 100%;
+  background: white;
+  background-size: cover;
+  grid-area: blank2;
+}
+.blank_tile3 {
+  width: 100%;
+  height: 100%;
+  background: white;
+  background-size: cover;
+  grid-area: blank3;
+}
+.blank_tile4 {
+  width: 100%;
+  height: 100%;
+  background: white;
+  background-size: cover;
+  grid-area: blank4;
+}
+.blank_tile5 {
+  width: 100%;
+  height: 100%;
+  background: white;
+  background-size: cover;
+  grid-area: blank5;
+}
+
+.house_img {
+  width: 100%;
+  height: 100%;
+  background: url("../../images/house_icon.png");
+  grid-area: house;
+  /* object-fit: cover; */
+  background-size: cover;
+  background-position: center;
+}
+
+.library_img {
+  width: 100%;
+  height: 100%;
+  background: url("../../images/library.png");
+  background-size: cover;
+  grid-area: lib;
+}
+
+.stadium_img {
+  width: 100%;
+  height: 100%;
+  background: url("../../images/stadium.png");
+  background-size: cover;
+  grid-area: stadium;
+}
+
+.location_name {
+  width: 100px;
+  /* height: 100%; */
+  justify-content: center;
+  align-items: center;
+}

@@ -1,9 +1,14 @@
 const SET_USER = "session/setUser";
+const REMOVE_USER = "session/removeUser";
 
-const setUser = (user) => ({
+export const setUser = (user) => ({
   type: SET_USER,
   payload: user,
 });
+
+export const removeUser = ()=> ({
+  type: REMOVE_USER,
+})
 
 
 export const createUser = (user) => async (dispatch) => {
@@ -21,6 +26,8 @@ export const createUser = (user) => async (dispatch) => {
     dispatch(setUser(data));
 };
 
+
+
 const initialState = { user: null };
 
 function reducer(state = initialState, action) {
@@ -28,6 +35,8 @@ function reducer(state = initialState, action) {
     switch (action.type) {
       case SET_USER:
         return { ...state, user: action.payload };
+      case REMOVE_USER:
+        return {...state, user: null}
       default:
         return state;
     }

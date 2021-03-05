@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import { useSelector, useDispatch } from "react-redux";
 
-const NavBar = ({ setAuthenticated }) => {
+const NavBar = () => {
   const sessionUser = useSelector((state) => state.session.user);
 
   return (
@@ -30,7 +30,7 @@ const NavBar = ({ setAuthenticated }) => {
           </NavLink>
         </li>
         <li>
-          <LogoutButton setAuthenticated={setAuthenticated} />
+          <LogoutButton />
         </li>
       </ul>
     </nav>

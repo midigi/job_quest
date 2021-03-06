@@ -1,20 +1,23 @@
 .map_tile {
-  width: 100px;
-  height: 100px;
+  height: 100%;
+  /* padding: 1vh; */
   /* position: relative;
   display: inline-block; */
 }
 
 .outer_map {
-  /* height: 100%;
-  width: 100%; */
+  height: 100vh;
+  /* width: 100%; */
   display: grid;
+  grid-template-rows: repeat(10, 1fr);
   grid-template-columns: repeat(10, 1fr);
   grid-template-areas:
-    "house house blank blank stadium stadium blank2 blank2 lib lib"
-    "house house blank blank stadium stadium blank2 blank2 lib lib"
-    "blank3 blank3 blank4 blank4 blank4 blank4 blank4 blank4 blank5 blank5"
-    "blank3 blank3 blank4 blank4 blank4 blank4 blank4 blank4 blank5 blank5";
+    "house house blank blank stadium stadium stadium blank2 lib lib"
+    "house house blank blank stadium stadium stadium blank2 lib lib"
+    "blank3 adm adm blank4 stadium stadium stadium blank6 blank7 blank7"
+    "blank3 adm adm blank4 blank5 blank5 blank5 lec lec blank11"
+    "blank9 blank9 blank9 career career blank10 blank10 lec lec blank11"
+    "blank9 blank9 blank9 career career blank10 blank10 blank12 blank12 blank11";
   /* "blank blank blank blank stadium stadium stadium blank blank blank"
     "blank blank blank blank stadium stadium stadium blank blank blank"
     "blank blank blank blank stadium stadium stadium blank blank blank"
@@ -23,7 +26,7 @@
     "blank blank blank blank stadium stadium stadium blank blank blank"
     "blank blank blank blank stadium stadium stadium blank blank blank"; */
   gap: 7px;
-  margin: 5vh;
+  margin: 7vh;
   border: 1px solid black;
 }
 
@@ -64,11 +67,11 @@
 .house_img {
   width: 100%;
   height: 100%;
-  background: url("../../images/house_icon.png");
+  background-image: url("../../images/house_icon.png");
+  background-size: cover;
+  /* background-position: center; */
   grid-area: house;
   /* object-fit: cover; */
-  background-size: cover;
-  background-position: center;
 }
 
 .library_img {
@@ -87,9 +90,32 @@
   grid-area: stadium;
 }
 
+.admission_img {
+  width: 100%;
+  height: 100%;
+  background: url("../../images/admission.png");
+  background-size: cover;
+  grid-area: adm;
+}
+
+.lecture_hall_img {
+    width: 100%;
+    height: 100%;
+    background: url("../../images/lecture_hall.png");
+    background-size: cover;
+    grid-area: lec;
+}
+.career_office_img {
+    width: 100%;
+    height: 100%;
+    background: url("../../images/career.png");
+    background-size: cover;
+    grid-area: career;
+}
+
 .location_name {
-  width: 100px;
-  /* height: 100%; */
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  text-align: center;
+  color: white;
+  background-color: black;
 }

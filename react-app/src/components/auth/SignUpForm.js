@@ -74,23 +74,23 @@ const SignUpForm = () => {
 
   return (
     <div className='background'>
-      <div>
-        <p>Already have an account?
-          <a href="/login">Log in</a>
-        </p>
-        <form onSubmit={onSignUp}>
+      <div className='center_form'>
+        <div className='title'>JOB QUEST
+        <div className='sub_title'>Sign Up Form
+        <form onSubmit={onSignUp} className="form">
           <div>
-            <label>User Name</label>
             <input
+              className="input"
               type="text"
               name="username"
+              placeholder="Username"
               onChange={updateUsername}
               value={username}
             ></input>
           </div>
           <div>
                 <input
-                  className="form_input"
+                  className="input"
                   type="text"
                   name="firstName"
                   placeholder="First Name"
@@ -100,7 +100,7 @@ const SignUpForm = () => {
           </div>
           <div>
                 <input
-                  className="form_input"
+                  className="input"
                   type="text"
                   name="lastName"
                   placeholder="Last Name"
@@ -108,37 +108,40 @@ const SignUpForm = () => {
                   value={lastName}
                 ></input>
           </div>
-          <div>
-            <label>Email</label>
+          <div >
             <input
+              className="input"
               type="text"
               name="email"
+              placeholder="Email"
               onChange={updateEmail}
               value={email}
             ></input>
           </div>
           <div>
-            <label>Password</label>
             <input
+              className="input"
               type="password"
               name="password"
+              placeholder="Password"
               onChange={updatePassword}
               value={password}
             ></input>
           </div>
-          <div>
-            <label>Repeat Password</label>
+          <div >
             <input
+              className="input"
               type="password"
               name="repeat_password"
+              placeholder="Confirm Password"
               onChange={updateRepeatPassword}
               value={repeatPassword}
               required={true}
             ></input>
           </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit" className="button">Sign Up</button>
           <Button
-            className="submit_button"
+            className="button"
             onClick={demoLogin}
             shape="round"
             htmlType="submit"
@@ -148,6 +151,11 @@ const SignUpForm = () => {
             Demo User
           </Button>
         </form>
+        <p className="account">Already have an account?
+          <a href="/login"> Log in</a>
+        </p>
+        </div>
+        </div>
       </div>
     </div>
   );

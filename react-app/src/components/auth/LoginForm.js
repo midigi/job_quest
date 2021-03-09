@@ -38,10 +38,9 @@ const LoginForm = () => {
 
   return (
     <div className='background'>
-      <div className='mid_box'>
-        <p>First time?
-          <a href="/sign-up">Make an account</a>
-        </p>
+      <div className='center_form'>
+        <div className='title'>JOB QUEST
+        <div className='sub_title'>Log In
         <form onSubmit={onLogin}>
           <div>
             {errors.map((error) => (
@@ -49,8 +48,8 @@ const LoginForm = () => {
             ))}
           </div>
           <div>
-            <label htmlFor="email">Email</label>
             <input
+              className="input"
               name="email"
               type="text"
               placeholder="Email"
@@ -59,17 +58,22 @@ const LoginForm = () => {
             />
           </div>
           <div>
-            <label htmlFor="password">Password</label>
             <input
+              className="input"
               name="password"
               type="password"
               placeholder="Password"
               value={password}
               onChange={updatePassword}
             />
-            <button type="submit">Login</button>
+            <button type="submit" className="button">Login</button>
+            <p className='account'>First time?
+              <a href="/sign-up"> Make an account</a>
+            </p>
           </div>
         </form>
+        </div>
+        </div>
       </div>
     </div>
   );

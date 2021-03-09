@@ -1,5 +1,6 @@
 .map_tile {
   height: 100%;
+  /* width: 500px; */
   /* padding: 1vh; */
   /* position: relative;
   display: inline-block; */
@@ -9,15 +10,15 @@
   height: 100vh;
   /* width: 100%; */
   display: grid;
-  grid-template-rows: repeat(10, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   grid-template-columns: repeat(10, 1fr);
   grid-template-areas:
-    "house house blank blank stadium stadium stadium blank2 lib lib"
-    "house house blank blank stadium stadium stadium blank2 lib lib"
-    "blank3 adm adm blank4 stadium stadium stadium blank6 blank7 blank7"
-    "blank3 adm adm blank4 blank5 blank5 blank5 lec lec blank11"
-    "blank9 blank9 blank9 career career blank10 blank10 lec lec blank11"
-    "blank9 blank9 blank9 career career blank10 blank10 blank12 blank12 blank11";
+    "house house . . stadium stadium stadium . lib lib"
+    "house house . . stadium stadium stadium . lib lib"
+    ". adm adm . stadium stadium stadium . . ."
+    ". adm adm . . . . lec lec ."
+    ". . . career career . . lec lec ."
+    ". . . career career . . . . .";
   /* "blank blank blank blank stadium stadium stadium blank blank blank"
     "blank blank blank blank stadium stadium stadium blank blank blank"
     "blank blank blank blank stadium stadium stadium blank blank blank"
@@ -25,43 +26,9 @@
     "blank blank blank blank stadium stadium stadium blank blank blank"
     "blank blank blank blank stadium stadium stadium blank blank blank"
     "blank blank blank blank stadium stadium stadium blank blank blank"; */
-  gap: 7px;
-  margin: 7vh;
+  gap: 10px;
+  margin: 8vh;
   border: 1px solid black;
-}
-
-.blank_tile {
-  width: 100%;
-  height: 100%;
-  grid-area: blank;
-}
-.blank_tile2 {
-  width: 100%;
-  height: 100%;
-  background: white;
-  background-size: cover;
-  grid-area: blank2;
-}
-.blank_tile3 {
-  width: 100%;
-  height: 100%;
-  background: white;
-  background-size: cover;
-  grid-area: blank3;
-}
-.blank_tile4 {
-  width: 100%;
-  height: 100%;
-  background: white;
-  background-size: cover;
-  grid-area: blank4;
-}
-.blank_tile5 {
-  width: 100%;
-  height: 100%;
-  background: white;
-  background-size: cover;
-  grid-area: blank5;
 }
 
 .house_img {
@@ -69,7 +36,7 @@
   height: 100%;
   background-image: url("../../images/house_icon.png");
   background-size: cover;
-  /* background-position: center; */
+  background-position: center;
   grid-area: house;
   /* object-fit: cover; */
 }
@@ -79,6 +46,7 @@
   height: 100%;
   background: url("../../images/library.png");
   background-size: cover;
+  background-position: center;
   grid-area: lib;
 }
 
@@ -87,6 +55,7 @@
   height: 100%;
   background: url("../../images/stadium.png");
   background-size: cover;
+  background-position: center;
   grid-area: stadium;
 }
 
@@ -95,22 +64,25 @@
   height: 100%;
   background: url("../../images/admission.png");
   background-size: cover;
+  background-position: center;
   grid-area: adm;
 }
 
 .lecture_hall_img {
-    width: 100%;
-    height: 100%;
-    background: url("../../images/lecture_hall.png");
-    background-size: cover;
-    grid-area: lec;
+  width: 100%;
+  height: 100%;
+  background: url("../../images/lecture_hall.png");
+  background-size: cover;
+  background-position: center;
+  grid-area: lec;
 }
 .career_office_img {
-    width: 100%;
-    height: 100%;
-    background: url("../../images/career.png");
-    background-size: cover;
-    grid-area: career;
+  width: 100%;
+  height: 100%;
+  background: url("../../images/career.png");
+  background-size: cover;
+  background-position: center;
+  grid-area: career;
 }
 
 .location_name {

@@ -20,7 +20,7 @@ class Option(db.Model):
         return {
             "id": self.id,
             "item_id": self.item_id,
-            "reward_item": self.reward_item,
+            "reward_item_id": self.reward_item_id,
             "event_id":  self.event_id,
             "name": self.name,
             "positive_contingency": self.positive_contingency,

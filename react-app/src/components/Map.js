@@ -1,12 +1,11 @@
 import "../images/house_icon.png";
 import "./styling/map.css";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {seeLocation} from "../store/location"
+// import { useDispatch } from "react-redux";
 import {NavLink} from "react-router-dom";
 
 function Maps() {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const [locations, setLocations] = useState([])
 
     // useEffect(()=>{

@@ -19,7 +19,6 @@ const SignUpForm = () => {
 
   const onSignUp = async (e) => {
     e.preventDefault();
-    let newErrors = []
     if (password === repeatPassword) {
       dispatch(createUser({ username, firstName, lastName, email, password }))
       .then(() => {

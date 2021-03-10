@@ -8,9 +8,7 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import Home from "./components/Home";
 import Events from "./components/Event"
-import { authenticate } from "./services/auth";
 import {useDispatch} from 'react-redux';
-import {setUser} from './store/session';
 import { restoreUser } from "./store/session";
 
 function App() {
@@ -21,7 +19,7 @@ function App() {
     dispatch(restoreUser()).then(() => {
       setLoaded(true);
     });
-  }, []);
+  }, [dispatch]);
   // useEffect(() => {
   //   (async() => {
   //     const user = await authenticate();

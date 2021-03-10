@@ -9,6 +9,7 @@ class Character(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     pic_url = db.Column(db.String(200), nullable=False)
     location_id = db.Column(db.Integer, db.ForeignKey("locations.id"), nullable=False)
+    name = db.Column(db.String(100), nullable=False)
     stamina = db.Column(db.Integer, nullable=False)
     mental_health = db.Column(db.Integer, nullable=False)
     wisdom = db.Column(db.Integer, nullable=False)
@@ -23,6 +24,7 @@ class Character(db.Model):
         return {
             "id": self.id,
             "pic_url": self.pic_url,
+            "name": self.name,
             "stamina": self.stamina,
             "mental_health": self.mental_health,
             "wisdom": self.wisdom,

@@ -1,11 +1,12 @@
 import React from "react";
 import Maps from "../components/Map";
+import Profile from "../components/profile";
 
 function Home(){
     return (
         <div>
             <div>
-                This will be the profile component
+                <Profile />
             </div>
             <div>
                 This will be the inventory component

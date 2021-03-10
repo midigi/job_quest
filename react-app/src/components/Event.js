@@ -1,11 +1,9 @@
-import { formatCountdown } from "antd/lib/statistic/utils";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch} from "react-redux";
 import { useParams } from "react-router-dom";
-import {seeLocationEvents} from "../store/location";
 
 function Events () {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const eventId = useParams();
     const [events, setEvents] = useState([]);
 

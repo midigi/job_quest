@@ -29,7 +29,6 @@ export const seeLocation = () => async (dispatch) => {
 const initialState = { task: null };
 
 function reducer(state = initialState, action) {
-  let newState;
   switch (action.type) {
     case GET_LOCATION:
         console.log("-------reducer for location-----")

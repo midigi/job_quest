@@ -7,7 +7,8 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import Home from "./components/Home";
-import Events from "./components/Event"
+import Events from "./components/Event";
+import Options from "./components/Option";
 import {useDispatch} from 'react-redux';
 import { restoreUser } from "./store/session";
 
@@ -60,6 +61,10 @@ function App() {
         <ProtectedRoute path="/:id/events" exact={true} >
           <NavBar />
           <Events />
+        </ProtectedRoute>
+        <ProtectedRoute path="/:id/options" exact={true} >
+          <NavBar />
+          <Options />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

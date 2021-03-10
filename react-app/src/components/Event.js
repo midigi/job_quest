@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 // import { useDispatch} from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
+import Options from "./Option"
+import "./styling/event.css"
 
 function Events () {
     // const dispatch = useDispatch();
@@ -11,6 +13,7 @@ function Events () {
         async function fetchEvents(){
             const res = await fetch(`/api/location/${eventId.id}/events`)
             const resData = await res.json();
+            console.log("events_______", resData)
             setEvents(resData.events)
         }
         fetchEvents();
@@ -21,15 +24,19 @@ function Events () {
 
     const eventComponents = events.map((event) =>{
         return (
-            <div key={event.id}>
-                {event.name}
+            <div key={event.id} className="event_tile">
+                <div>Event: {event.name}</div>
+                <div>Description: {event.description}</div>
+                <NavLink to={`/${event.id}/options`}>Option</NavLink>
             </div>
         )
     })
     return(
         <div>
             <div>Event Page</div>
-            <div>{eventComponents}</div>
+            <div className="outer_event_box">
+                {eventComponents}
+            </div>
         </div>
     )
 }

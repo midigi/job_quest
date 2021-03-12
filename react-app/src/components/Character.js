@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createCharacter } from "../store/character";
+// import { createCharacter } from "../store/character";
 
 const createCharForm = () => {
     const [characterName, setCharacterName] = useState("");
@@ -8,11 +8,11 @@ const createCharForm = () => {
     const dispatch = useDispatch();
 }
 
-const onCharCreation = async (e) => {
-    e.preventDefault();
-    dispatch(createCharacter({characterName, characterUrl}));
-    await history.pushState("/");
-};
+// const onCharCreation = async (e) => {
+//     e.preventDefault();
+//     dispatch(createCharacter({characterName, characterUrl}));
+//     await history.pushState("/");
+// };
 
 return (
     <div className="char_create_box">

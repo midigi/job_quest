@@ -12,6 +12,7 @@ from .api.location_routes import location_routes
 from .api.event_routes import event_routes
 from .api.option_routes import option_routes
 from .api.character_routes import character_routes
+from .api.inventory_routes import inventory_routes
 
 from .seeds import seed_commands
 
@@ -39,6 +40,7 @@ app.register_blueprint(location_routes, url_prefix='/api/location')
 app.register_blueprint(event_routes, url_prefix='/api/event')
 app.register_blueprint(option_routes, url_prefix='/api/option')
 app.register_blueprint(character_routes, url_prefix='/api/character')
+app.register_blueprint(inventory_routes, url_prefix='/api/inventory')
 db.init_app(app)
 Migrate(app, db, compare_type=True)
 

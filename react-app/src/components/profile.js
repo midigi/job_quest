@@ -1,40 +1,45 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {setCharacters, setCharacter} from "../store/character";
 import "./styling/profile.css";
 
 function Profile(){
     // const characterId = useParams();
-    const [characters, setCharacters] = useState([]);
-    const [activeCharacter, setActiveCharacter] = useState(1);
+    // const [characters, setCharacters] = useState([]);
+    // const [activeCharacter, setActiveCharacter] = useState(1);
+    const characters = useSelector((state) => Object.values(state.character.characters));
+    const dispatch = useDispatch()
 
+    const setActiveCharacter = (id) => (e) => {
+        dispatch(setCharacter(id))
+    }
 
     useEffect(() => {
         async function fetchCharacters(){
             const res = await fetch(`/api/character/`)
             const resData = await res.json();
             console.log('characters-----', resData)
-            setCharacters(resData.characters)
+            dispatch(setCharacters(resData.characters))
         }
         fetchCharacters();
-    }, [activeCharacter]);
-
-    const characterComs = characters.map((character) =>{
-        return (
-            <div key={character.id}>
-                <img className="character_img" src={character.pic_url} />
-                <div>Name: {character.name}</div>
-                <div>Intelligence: {character.intelligence}</div>
-                <div>Mental Health: {character.mental_health}</div>
-                <div>Stamina: {character.stamina}</div>
-                <div>Wisdom: {character.wisdom}</div>
-            </div>
-        )
-    })
+    }, []);
 
     return (
         <div>
             <div>
-                {characterComs}
+                {characters && characters.map((character) => (
+                    <div key={character.id}>
+                        <button onClick={setActiveCharacter(character.id)}>
+                            <img className="character_img" src={character.pic_url} />
+                        </button>
+                        <div>Name: {character.name}</div>
+                        <div>Intelligence: {character.intelligence}</div>
+                        <div>Mental Health: {character.mental_health}</div>
+                        <div>Stamina: {character.stamina}</div>
+                        <div>Wisdom: {character.wisdom}</div>
+                    </div>
+                ))}
             </div>
         </div>
     )

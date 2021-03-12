@@ -1,6 +1,7 @@
 import React from "react";
 import Maps from "../components/Map";
 import Profile from "../components/profile";
+import Inventory from "../components/Inventory";
 
 function Home(){
     return (
@@ -9,7 +10,7 @@ function Home(){
                 <Profile />
             </div>
             <div>
-                This will be the inventory component
+                <Inventory />
             </div>
             <div>
                 <Maps />

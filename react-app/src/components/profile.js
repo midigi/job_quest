@@ -3,8 +3,9 @@ import { useParams } from "react-router-dom";
 import "./styling/profile.css";
 
 function Profile(){
-    const characterId = useParams();
+    // const characterId = useParams();
     const [characters, setCharacters] = useState([]);
+    const [activeCharacter, setActiveCharacter] = useState(1);
 
 
     useEffect(() => {
@@ -15,7 +16,7 @@ function Profile(){
             setCharacters(resData.characters)
         }
         fetchCharacters();
-    }, [characterId]);
+    }, [activeCharacter]);
 
     const characterComs = characters.map((character) =>{
         return (

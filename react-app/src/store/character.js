@@ -33,6 +33,13 @@ export const getAllCharacters = () => async (dispatch) =>{
     dispatch(setCharacters(data.characters))
 };
 
+export const optionDecider = (charId, optionId) => async (dispatch) =>{
+    const res = await fetch(`/api/character/${charId}/${optionId}`);
+    const data = await res.json();
+    console.log("option decider---", data)
+    // dispatch(setCharacters(data.characters))
+};
+
 
 const initialState = { character: null, characters: {} };
 

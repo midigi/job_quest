@@ -13,7 +13,7 @@ function Events () {
         async function fetchEvents(){
             const res = await fetch(`/api/location/${eventId.id}/events`)
             const resData = await res.json();
-            console.log("events_______", resData)
+            // console.log("events_______", resData)
             setEvents(resData.events)
         }
         fetchEvents();
@@ -24,11 +24,10 @@ function Events () {
 
     const eventComponents = events.map((event) =>{
         return (
-            <div key={event.id} className="event_tile">
-                <div>Event: {event.name}</div>
+            <NavLink to={`/${event.id}/options`}key={event.id} className="event_tile">
+                <h4>Event: {event.name}</h4>
                 <div>Description: {event.description}</div>
-                <NavLink to={`/${event.id}/options`}>Option</NavLink>
-            </div>
+            </NavLink>
         )
     })
     return(

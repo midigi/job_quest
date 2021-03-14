@@ -31,7 +31,7 @@ const initialState = { task: null };
 function reducer(state = initialState, action) {
   switch (action.type) {
     case GET_LOCATION:
-        console.log("-------reducer for location-----")
+        // console.log("-------reducer for location-----")
         return { ...state, task: action.payload };
     default:
         return state;

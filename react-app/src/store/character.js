@@ -1,3 +1,6 @@
+import { Button, Input, message } from "antd";
+
+
 const SET_CHARACTER = "character/SET_CHARACTER"
 const SET_CHARACTERS = "character/SET_CHARACTERS"
 const REMOVE_CHARACTER = "character/REMOVE_CHARACTER"
@@ -35,8 +38,9 @@ export const getAllCharacters = () => async (dispatch) =>{
 
 export const optionDecider = (charId, optionId) => async (dispatch) =>{
     const res = await fetch(`/api/character/${charId}/${optionId}`);
-    const data = await res.json();
-    console.log("option decider---", data)
+    const data = await res.text()
+    message.success(data)
+    // console.log("option decider---", data)
     // dispatch(setCharacters(data.characters))
 };
 

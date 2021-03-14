@@ -1,16 +1,22 @@
 .outer_event_box {
-  height: 100vh;
   display: grid;
-  background: green;
+  grid-gap: 2em;
+  margin: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: max-content;
 }
 
 .event_tile {
   display: grid;
   max-height: 300px;
   max-width: 400px;
-  background: blue;
-  /* grid-template-columns: repeat(auto-fill, minmax(10em, 1fr)); */
-  grid-gap: 2em;
-  justify-content: center;
-  align-items: center;
+  background-color: lightgray;
+  padding: 0.5rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px lightgrey;
+}
+.event_tile > * {
+  /* min-height: 300px;
+  min-width: 300px; */
 }

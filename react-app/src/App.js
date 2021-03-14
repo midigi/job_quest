@@ -11,6 +11,7 @@ import Events from "./components/Event";
 import Options from "./components/Option";
 import {useDispatch} from 'react-redux';
 import { restoreUser } from "./store/session";
+import "antd/dist/antd.css";
 
 function App() {
   const [loaded, setLoaded] = useState(false);

@@ -11,14 +11,14 @@ function Inventory () {
     const inventory = useSelector((state) => state.inventory.inventory);
     const activeCharacter = useSelector((state) => state.character.character);
     const characterInfo = useSelector((state)=> state.character.characters);
-    console.log("--CHARACTERINFO----", characterInfo)
+    // console.log("--CHARACTERINFO----", characterInfo)
 
     useEffect(() => {
         async function fetchInventory(){
             if (activeCharacter){
                 const res = await fetch(`/api/character/${activeCharacter}/items`)
                 const resData = await res.json();
-                console.log("Inventory_______", resData)
+                // console.log("Inventory_______", resData)
                 dispatch(setInventory(resData.items))
             }
         }

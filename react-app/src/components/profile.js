@@ -8,7 +8,11 @@ function Profile(){
     // const characterId = useParams();
     // const [characters, setCharacters] = useState([]);
     // const [activeCharacter, setActiveCharacter] = useState(1);
-    const characters = useSelector((state) => Object.values(state.character.characters));
+    debugger;
+    const characters = useSelector((state) => {
+        debugger;
+        return Object.values(state.character.characters)
+    });
     const dispatch = useDispatch()
 
     const setActiveCharacter = (id) => (e) => {
@@ -19,7 +23,7 @@ function Profile(){
         async function fetchCharacters(){
             const res = await fetch(`/api/character/`)
             const resData = await res.json();
-            console.log('characters-----', resData)
+            // console.log('characters-----', resData)
             dispatch(setCharacters(resData.characters))
         }
         fetchCharacters();

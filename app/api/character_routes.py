@@ -27,40 +27,45 @@ def postCharacter():
 @character_routes.route('/<int:charId>/<int:optionId>')
 @login_required
 def getCharItem(charId, optionId):
-    # print("###################################")
     character = Character.query.get(charId)
-    # print("charitems", character.items)
-    # allItems = character.items.all()
-    # print("all items in char routes", allItems)
     charItem = {"items": [item.to_dict() for item in character.items.all()]}
-
-    # print("======char items.items=====", charItem.items)
     option = Option.query.get(optionId)
+    # print("option POSITIVE in char routes", option.positive_contingency)
+    # print("option ITEM in char routes", option.item_id)
 
-    print("option POSITIVE in char routes", option.positive_contingency)
-    print("option ITEM in char routes", option.item_id)
-    if (option.item_id is None):
+    char_reward = option.reward_item_id
+
+    a = Character()
+    a = character
+    b = Item()
+    if(char_reward is not None):
+        b = Item.query.get(option.reward_item_id)
+        b.characters.append(a)
+    else:
         return option.positive_contingency
-        print("======char items=====", charItem)
+    # print("-----current_user -----", character.items)
+    # print("======char items=====", charItem)
+    # print("======Reward Item=====", Item.query.get(option.reward_item_id))
+
+    # Make sure reward item hasn't already been collected
+    for item in charItem["items"]:
+        if (item['id'] == char_reward):
+            return "You already have this item!"
+
+    # Starting point and red-herrings don't need items to have positive contingency
+    if (option.item_id is None):
+        if (char_reward is not None):
+            db.session.add(b)
+            db.session.commit()
+        return option.positive_contingency
 
     for itemId in charItem['items']:
         print("======char items.items=====", itemId['id'])
         if (itemId['id'] == option.item_id):
-            return option.positive_contingency
-    # elif (option.item_id is in charItem)
-    # optItem = {"option": [item.to_dict() for item in option.required_item.all()]}
-    # optItem might return nonetype which can be okay
-    # print("option ITEM in char routes---", optItem)
+            db.session.add(b)
+            db.session.commit()
+        return option.positive_contingency
     return option.negative_contingency
-
-    # if(option.id in allItems):
-    #     return(True)
-    # else:
-    #     return(False)
-
-
-
-
 
 @character_routes.route('/<int:id>/items')
 @login_required

@@ -11,6 +11,9 @@ def seed_events():
     test = Event(location_id=2, name='Take the test', description='Time for a test! Very stressful.')
     sport = Event(location_id=5, name='Sign up for a sports team', description='Playing sports is good for mental and physical health.')
     graduate = Event(location_id=6, name='Graduate', description='Graduation deserves a big congratulations!')
+    exploreDorm = Event(location_id=4, name='Explore the basement', description='It seems the janitor accidently left the basement door unlocked. I wonder what could be under the dorm rooms?')
+    exploreStadium = Event(location_id=5, name='Walk around the stadium', description='It is game day! Might as well have some fun.')
+    
 
     db.session.add(getSched)
     db.session.add(goToClass)
@@ -19,6 +22,8 @@ def seed_events():
     db.session.add(test)
     db.session.add(sport)
     db.session.add(graduate)
+    db.session.add(exploreDorm)
+    db.session.add(exploreStadium)
 
     db.session.commit()
 

@@ -57,14 +57,14 @@ def getCharItem(charId, optionId):
         if (char_reward is not None):
             db.session.add(b)
             db.session.commit()
-        return option.positive_contingency
+            return option.positive_contingency
 
     for itemId in charItem['items']:
         print("======char items.items=====", itemId['id'])
         if (itemId['id'] == option.item_id):
             db.session.add(b)
             db.session.commit()
-        return option.positive_contingency
+            return option.positive_contingency
     return option.negative_contingency
 
 @character_routes.route('/<int:id>/items')

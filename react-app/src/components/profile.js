@@ -9,11 +9,11 @@ function Profile(){
     // const [characters, setCharacters] = useState([]);
     // const [activeCharacter, setActiveCharacter] = useState(1);
     debugger;
-    const characters = useSelector((state) => {
-        debugger;
-        return Object.values(state.character.characters)
-    });
+    const characters = useSelector((state) => Object.values(state.character.characters));
+    // ToDo need to pre-select active character during character CRUD set up
+    // const activeChar = useSelector((state) => Object.values(state.character.character));
     const dispatch = useDispatch()
+
 
     const setActiveCharacter = (id) => (e) => {
         dispatch(setCharacter(id))
@@ -31,7 +31,22 @@ function Profile(){
 
     return (
         <div>
+
+            {/* <div>
+            ToDo will only work when CRUD character set up in order.
+            activeChar && (
+                <div>Active Character</div>
+                <img src={activeChar.pic_url} />
+                <div>Name: {activeChar.name}</div>
+                <div>Intelligence: {activeChar.intelligence}</div>
+                <div>Mental Health: {activeChar.mental_health}</div>
+                <div>Stamina: {activeChar.stamina}</div>
+                <div>Wisdom: {activeChar.wisdom}</div>
+            )
+            </div> */}
+
             <div>
+                <div>Additional Characters</div>
                 {characters && characters.map((character) => (
                     <div key={character.id}>
                         <button onClick={setActiveCharacter(character.id)}>

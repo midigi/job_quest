@@ -10,6 +10,8 @@ def seed_items():
     diploma = Item(name='Diploma', description='Congratulations on graduation! This will help with your job search.', cost=0)
     extracurr = Item(name='Extra curricular activity', description='Having a well rounded personality is just as important as being book smart.', cost=0)
     pen = Item(name='Pen', description='It is a pen. You can write on paper with it.', cost=0)
+    easterEgg = Item(name='Easter Egg', description='How did you get that? Hmmmm...', cost=0)
+    highMarks = Item(name='A+ test score', description='You must have studied really hard! Great work!', cost=0)
 
     db.session.add(homework)
     db.session.add(classSchedule)
@@ -17,6 +19,8 @@ def seed_items():
     db.session.add(diploma)
     db.session.add(extracurr)
     db.session.add(pen)
+    db.session.add(easterEgg)
+    db.session.add(highMarks)
 
     db.session.commit()
 

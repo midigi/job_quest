@@ -44,8 +44,8 @@ export const optionDecider = (charId, optionId) => async (dispatch) =>{
     // dispatch(setCharacters(data.characters))
 };
 
-
-const initialState = { character: null, characters: {} };
+//ToDo character should be set to 1st character creation CRUD instead of 1
+const initialState = { character: 1, characters: {} };
 
 function reducer(state = initialState, action) {
   switch (action.type) {

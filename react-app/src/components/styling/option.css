@@ -1,4 +1,4 @@
-.outer_event_box {
+.outer_option_box {
   display: grid;
   grid-gap: 2em;
   margin: 10px;
@@ -6,7 +6,7 @@
   max-width: max-content;
 }
 
-.event_tile {
+.option_tile {
   display: grid;
   max-height: 300px;
   max-width: 400px;
@@ -16,4 +16,3 @@
   border-radius: 5px;
   box-shadow: 5px 5px lightgrey;
 }
-

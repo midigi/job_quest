@@ -7,12 +7,6 @@ function Home(){
     return (
         <div>
             <div>
-                <Profile />
-            </div>
-            <div>
-                <Inventory />
-            </div>
-            <div>
                 <Maps />
             </div>
         </div>

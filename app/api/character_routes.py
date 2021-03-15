@@ -60,7 +60,7 @@ def getCharItem(charId, optionId):
             return option.positive_contingency
 
     for itemId in charItem['items']:
-        print("======char items.items=====", itemId['id'])
+        # print("======char items.items=====", itemId['id'])
         if (itemId['id'] == option.item_id):
             db.session.add(b)
             db.session.commit()

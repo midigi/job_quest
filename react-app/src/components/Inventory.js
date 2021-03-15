@@ -32,7 +32,7 @@ function Inventory () {
                 {inventory && inventory.map((item) => (
                     <div key={item.id} className="inventory_tile">
                         <div className="item_tile">
-                            <div>Name: {item.name}</div>
+                            <div className="inventory_item">Name: {item.name}</div>
                             <div>Description: {item.description}</div>
                         </div>
                     </div>

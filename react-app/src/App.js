@@ -7,6 +7,8 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import Home from "./components/Home";
+import Inventory from "./components/Inventory";
+import Profile from "./components/profile";
 import Events from "./components/Event";
 import Options from "./components/Option";
 import {useDispatch} from 'react-redux';
@@ -58,6 +60,14 @@ function App() {
         <ProtectedRoute path="/" exact={true} >
           <NavBar />
           <Home />
+        </ProtectedRoute>
+        <ProtectedRoute path="/inventory" exact={true} >
+          <NavBar />
+          <Inventory />
+        </ProtectedRoute>
+        <ProtectedRoute path="/profile" exact={true} >
+          <NavBar />
+          <Profile />
         </ProtectedRoute>
         <ProtectedRoute path="/:id/events" exact={true} >
           <NavBar />

@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {setCharacters, setCharacter} from "../store/character";
+import Inventory from "./Inventory";
 import "./styling/profile.css";
 
 function Profile(){
     // const characterId = useParams();
     // const [characters, setCharacters] = useState([]);
     // const [activeCharacter, setActiveCharacter] = useState(1);
-    debugger;
     const characters = useSelector((state) => Object.values(state.character.characters));
     // ToDo need to pre-select active character during character CRUD set up
     // const activeChar = useSelector((state) => Object.values(state.character.character));
@@ -60,6 +60,7 @@ function Profile(){
                     </div>
                 ))}
             </div>
+            <Inventory />
         </div>
     )
 }

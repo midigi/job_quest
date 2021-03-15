@@ -10,6 +10,7 @@ def seed_options():
     signUpSport = Option(reward_item_id=5, event_id=6, name='Sign up to play a sport.', positive_contingency='Playing a sport is great for you physical and mental health! You also get credit for participating in extra curricular activities.')
     takeTest = Option(item_id=3, reward_item_id=8, event_id=5, name='Take the test.', positive_contingency='Wow you aced that test! You get an A+ on the test! Might as well head on over to the career office to look for a job.', negative_contingency='You are probably going to fail this test. Perhaps study a bit first?')
     graduate = Option(item_id=8, reward_item_id=4, event_id=7, name='Try to graduate', positive_contingency='Congratulations! You are a hard working, dedicated, talented, and smart individual! You graduate and get an awesome job!', negative_contingency='It does not look like you have the proper requirements to graduate. Perhaps go to class or do some extra curricular activities.')
+    exploreDorm= Option(reward_item_id=7, event_id=8, name='Explore Basement', positive_contingency='hmmmm... that is an odd find...')
 
     db.session.add(getSched)
     db.session.add(dropOut)
@@ -18,6 +19,7 @@ def seed_options():
     db.session.add(signUpSport)
     db.session.add(takeTest)
     db.session.add(graduate)
+    db.session.add(exploreDorm)
 
     db.session.commit()
 

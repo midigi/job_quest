@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {setInventory} from "../store/inventory";
 // import "./styling/option.css"
 import {optionDecider} from "../store/character";
+import Inventory from "../components/Inventory";
+import "./styling/option.css"
 
 function Options () {
     const dispatch = useDispatch();
@@ -35,15 +37,16 @@ function Options () {
 
     return(
         <div>
+            {/* <Inventory /> */}
             <div>Options</div>
                 <div className="outer_option_box">
                     {options && options.map((option, index) => (
-                        <button key={option.id} onClick={()=>clicky(option.id)}>
+                        <div key={option.id} onClick={()=>clicky(option.id)}>
                             {/* {console.log("option", option)} */}
                             <div className="option_tile">
-                                <div className="option_name">{option.name}</div>
+                                {option.name}
                             </div>
-                        </button>
+                        </div>
                     ))}
                 </div>
         </div>

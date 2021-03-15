@@ -1,6 +1,7 @@
 .background {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   padding: 8%;
   background-image: url("../../../src/images/bookshelfImage.jpg");
   background-repeat: no-repeat;
@@ -28,7 +29,7 @@
 
 .title {
   font-weight: bold;
-  font-size: 36px;
+  font-size: 24px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -36,14 +37,14 @@
 }
 .sub_title {
   font-weight: normal;
-  font-size: 30px;
+  font-size: 20px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .account {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .input {

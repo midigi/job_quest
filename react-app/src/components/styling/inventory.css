@@ -1,0 +1,23 @@
+.outer_inventory_box {
+    display: grid;
+    grid-gap: 2em;
+    margin: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: max-content;
+}
+
+
+.item_img_grey{
+    height: 100px;
+    filter: grayscale(100%) brightness(25%) opacity(50%);
+}
+.item_img{
+    transition: 0.3s;
+    height: 100px;
+    filter: none;
+}
+
+.item_img:hover {
+    height: 125px;
+    filter: none;
+}

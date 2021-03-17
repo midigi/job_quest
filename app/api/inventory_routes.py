@@ -4,6 +4,12 @@ from app.models import Item, db
 
 inventory_routes = Blueprint('inventory', __name__)
 
+@inventory_routes.route('/')
+@login_required
+def allItems():
+    items = Item.query.all()
+    return {"allItems": [item.to_dict() for item in items]}
+
 @inventory_routes.route('/create', methods=["POST"])
 @login_required
 def inventory(charInfo):

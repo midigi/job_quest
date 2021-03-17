@@ -8,6 +8,7 @@ class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(500))
+    pic_url = db.Column(db.String(200), nullable=False)
     cost = db.Column(db.Integer)
 
     required_opt = db.relationship("Option", back_populates="required_item", foreign_keys="Option.item_id")
@@ -20,5 +21,6 @@ class Item(db.Model):
             "id": self.id,
             "name": self.name,
             "description": self.description,
+            "pic_url": self.pic_url,
             "cost": self.cost,
         }

@@ -53,14 +53,14 @@ function Profile(){
                             <img className="character_img" src={character.pic_url} />
                         </button>
                         <div>Name: {character.name}</div>
-                        <div>Intelligence: {character.intelligence}</div>
+                        {/* <div>Intelligence: {character.intelligence}</div>
                         <div>Mental Health: {character.mental_health}</div>
                         <div>Stamina: {character.stamina}</div>
-                        <div>Wisdom: {character.wisdom}</div>
+                        <div>Wisdom: {character.wisdom}</div> */}
                     </div>
                 ))}
+                <Inventory />
             </div>
-            <Inventory />
         </div>
     )
 }

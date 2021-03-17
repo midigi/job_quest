@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {createInventory, setInventory} from "../store/inventory";
+import {createInventory, setItems, setInventory} from "../store/inventory";
 import { useParams } from "react-router-dom";
+import "./styling/inventory.css";
+import 'antd/dist/antd.css';
+import { Popover, Button } from 'antd';
 // import "./styling/option.css"
 
 function Inventory () {
@@ -9,6 +12,7 @@ function Inventory () {
     // const eventId = useParams();
     // const [inventory, setInventory] = useState([]);
     const inventory = useSelector((state) => state.inventory.inventory);
+    const allItems = useSelector((state) => state.inventory.allItems);
     const activeCharacter = useSelector((state) => state.character.character);
     const characterInfo = useSelector((state)=> state.character.characters);
     // console.log("--CHARACTERINFO----", characterInfo)
@@ -25,18 +29,48 @@ function Inventory () {
         fetchInventory();
       }, [activeCharacter]);
 
+    useEffect(()=> {
+        async function fetchItems(){
+            if(activeCharacter){
+                const res = await fetch(`/api/inventory/`)
+                const resData = await res.json();
+                console.log("api inventory------", resData)
+                dispatch(setItems(resData.allItems))
+            }
+        }
+        fetchItems();
+    }, [activeCharacter]);
+
+    const addColor = (special) => {
+        const color = document.getElementsByTagName("img");
+        for(let each of color) {
+            if (each.src === special){
+                each.classList.add("item_img");
+                // each.classList.remove("item_img")
+            }
+
+        }
+    }
+
     return(
-        <div >
+        <div>
             <div>Inventory</div>
             <div className="outer_inventory_box">
-                {inventory && inventory.map((item) => (
-                    <div key={item.id} className="inventory_tile">
+                {allItems && allItems.map((item) => (
+                     <div key={item.id} className="inventory_tile">
                         <div className="item_tile">
-                            <div className="inventory_item">Name: {item.name}</div>
-                            <div>Description: {item.description}</div>
+                            <Popover content={
+                                <>
+                                    <div>Name: {item.name}</div>
+                                    <div>Description: {item.description}</div>
+                                </>
+                            }>
+                            {/* Might need to change inventory && to inventory ? and additional logic based on future test cases */}
+                            <img className={ inventory && (inventory.map(el => el.id ).includes(item.id) ? "item_img" : "item_img_grey")} src={item.pic_url} />
+                            </Popover>
                         </div>
                     </div>
-            ))}
+                ))}
             </div>
         </div>
     )

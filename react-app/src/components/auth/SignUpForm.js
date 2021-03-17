@@ -139,7 +139,7 @@ const SignUpForm = () => {
             ></input>
           </div>
           <button type="submit" className="button">Sign Up</button>
-          <Button
+          <button
             className="button"
             onClick={demoLogin}
             shape="round"
@@ -148,7 +148,7 @@ const SignUpForm = () => {
             type="primary"
           >
             Demo User
-          </Button>
+          </button>
         </form>
         <p className="account">Already have an account?
           <a href="/login"> Log in</a>

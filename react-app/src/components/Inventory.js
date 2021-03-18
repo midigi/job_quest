@@ -34,7 +34,7 @@ function Inventory () {
             if(activeCharacter){
                 const res = await fetch(`/api/inventory/`)
                 const resData = await res.json();
-                console.log("api inventory------", resData)
+                // console.log("api inventory------", resData)
                 dispatch(setItems(resData.allItems))
             }
         }

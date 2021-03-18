@@ -8,15 +8,18 @@ import "./styling/profile.css";
 function Profile(){
     // const characterId = useParams();
     // const [characters, setCharacters] = useState([]);
-    // const [activeCharacter, setActiveCharacter] = useState(1);
     const characters = useSelector((state) => Object.values(state.character.characters));
+    const activeCharacter = useSelector((state) => state.character.character);
+    const [activeChar, setActiveChar] = useState("active");
     // ToDo need to pre-select active character during character CRUD set up
     // const activeChar = useSelector((state) => Object.values(state.character.character));
     const dispatch = useDispatch()
+    console.log("this ist he active char id", activeCharacter)
 
 
     const setActiveCharacter = (id) => (e) => {
         dispatch(setCharacter(id))
+
     }
 
     useEffect(() => {
@@ -50,7 +53,7 @@ function Profile(){
                 {characters && characters.map((character) => (
                     <div key={character.id}>
                         <button onClick={setActiveCharacter(character.id)}>
-                            <img className="character_img" src={character.pic_url} />
+                            <img src={character.pic_url} className={ character.id == activeCharacter ? "character_img_active" : "character_img"} />
                         </button>
                         <div>Name: {character.name}</div>
                         {/* <div>Intelligence: {character.intelligence}</div>

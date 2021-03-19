@@ -3,6 +3,7 @@ import "./styling/map.css";
 import React, { useEffect, useState } from "react";
 // import { useDispatch } from "react-redux";
 import {NavLink} from "react-router-dom";
+import Inventory from "./Inventory";
 
 function Maps() {
     // const dispatch = useDispatch();
@@ -29,6 +30,8 @@ function Maps() {
     //       )
     //   })
     return (
+        <div>
+        <Inventory />
         <div className="outer_map">
             {/* <div>{locationComponents}</div> */}
             {/* style="background-image: url('../images/house_icon.png')" */}
@@ -62,6 +65,7 @@ function Maps() {
                     Career Office
                 </div>
             </NavLink>
+        </div>
         </div>
     )
 }

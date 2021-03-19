@@ -11,6 +11,7 @@ import Inventory from "./components/Inventory";
 import Profile from "./components/profile";
 import Events from "./components/Event";
 import Options from "./components/Option";
+import EasterEgg from "./components/EasterEgg";
 import {useDispatch} from 'react-redux';
 import { restoreUser } from "./store/session";
 import "antd/dist/antd.css";
@@ -76,6 +77,9 @@ function App() {
         <ProtectedRoute path="/:id/options" exact={true} >
           <NavBar />
           <Options />
+        </ProtectedRoute>
+        <ProtectedRoute path="/hire-me" exact={true} >
+          <EasterEgg />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

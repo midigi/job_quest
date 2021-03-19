@@ -4,10 +4,15 @@
 }
 .character_img_active{
     height: 250px;
+    transition: 0.3s;
     border: 1px solid red;
 }
 
 .character_img:hover {
   height: 275px;
   cursor: pointer;
+}
+
+.character_img_active:hover{
+    height: 275px;
 }

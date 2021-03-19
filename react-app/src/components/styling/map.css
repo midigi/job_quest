@@ -1,7 +1,27 @@
+body {
+    background: linear-gradient(-45deg, #bb0505, #ed7636, #f9cd1f, #d52367);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    /* height: 100vh;
+    border: 15px solid black; */
+ }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
 .map_tile {
   height: 100%;
   background: rgb(189, 223, 255);
-  border-radius: 5px;
+  border-radius: 5%;
   /* width: 500px; */
   /* padding: 1vh; */
   /* position: relative;
@@ -9,7 +29,7 @@
 }
 
 .outer_map {
-  height: 100vh;
+  height: 87vh;
   /* width: 100%; */
   display: grid;
   grid-template-rows: repeat(6, 1fr);
@@ -29,10 +49,14 @@
     "blank blank blank blank stadium stadium stadium blank blank blank"
     "blank blank blank blank stadium stadium stadium blank blank blank"; */
   gap: 10px;
-  margin: 8vh;
+  margin-left: 18vh;
+  margin-right: 18vh;
+  margin-bottom: 10vh;
+  margin-top: 2vh;
   border: 1px solid black;
   background: url("../../images/grass_img.jpeg");
-  background-size: cover;
+  /* background-size: cover; */
+  border-radius: 2%;
 }
 
 .house_img {

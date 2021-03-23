@@ -24,6 +24,7 @@ def seed_events():
     db.session.add(graduate)
     db.session.add(exploreDorm)
     db.session.add(exploreStadium)
+    db.session.add(commonArea)
 
     db.session.commit()
 

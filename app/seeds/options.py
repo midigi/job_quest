@@ -13,8 +13,8 @@ def seed_options():
     exploreDorm = Option(reward_item_id=6, event_id=8, name='Explore Basement', positive_contingency='You found a pen! Exciting.')
     sleep = Option(event_id=4, name='Rest', positive_contingency='You feel well rested and ready to tackle the day!')
     exploreStadium = Option(reward_item_id=9, event_id=9, name='Watch game', positive_contingency='You cheer on the school team. You also get a beer to drink. Fun!')
-    studyInDorm = Option(item_id=1, reward_item_id=3, event_id=9, name='Study homework.', positive_contingency='You reinforce your classroom learning and feel confident for the test tomorrow. You gain "knowledge"! However, you start feeling a bit sleepy. Perhaps get some rest!', negative_contingency='Do you have anything to study yet? Going to class first might help!')
-    meetFriend = Option(reward_item_id=10, event_id=9, name='Talk to other students.', positive_contingency='You meet a new friend! What a joyous occurance. :)')
+    studyInDorm = Option(item_id=1, reward_item_id=3, event_id=10, name='Study homework.', positive_contingency='You reinforce your classroom learning and feel confident for the test tomorrow. You gain "knowledge"! However, you start feeling a bit sleepy. Perhaps get some rest!', negative_contingency='Do you have anything to study yet? Going to class first might help!')
+    meetFriend = Option(reward_item_id=10, event_id=10, name='Talk to other students.', positive_contingency='You meet a new friend! What a joyous occurance. :)')
     easterEgg = Option(reward_item_id=7, name='Find Easter Egg', positive_contingency='You found the easter egg. Hire me please?')
 
     db.session.add(getSched)
@@ -29,6 +29,7 @@ def seed_options():
     db.session.add(exploreStadium)
     db.session.add(studyInDorm)
     db.session.add(meetFriend)
+    db.session.add(easterEgg)
 
     db.session.commit()
 

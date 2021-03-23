@@ -63,7 +63,7 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('item_id', sa.Integer(), nullable=True),
     sa.Column('reward_item_id', sa.Integer(), nullable=True),
-    sa.Column('event_id', sa.Integer(), nullable=False),
+    sa.Column('event_id', sa.Integer()),
     sa.Column('name', sa.String(length=50), nullable=False),
     sa.Column('positive_contingency', sa.String(length=50), nullable=True),
     sa.Column('negative_contingency', sa.String(length=50), nullable=True),

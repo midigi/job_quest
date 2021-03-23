@@ -13,7 +13,7 @@ def seed_events():
     graduate = Event(location_id=6, name='Graduate', description='Graduation deserves a big congratulations!')
     exploreDorm = Event(location_id=4, name='Explore the basement', description='It seems the janitor accidently left the basement door unlocked. I wonder what could be under the dorm rooms?')
     exploreStadium = Event(location_id=5, name='Walk around the stadium', description='It is game day! Might as well have some fun.')
-    
+    commonArea = Event(location_id=4, name='Check out the common area.', description='Play some video games, meet a friend, or read a good book in the presence of others.')
 
     db.session.add(getSched)
     db.session.add(goToClass)

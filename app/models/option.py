@@ -7,7 +7,7 @@ class Option(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     item_id = db.Column(db.Integer, db.ForeignKey("items.id"))
     reward_item_id = db.Column(db.Integer, db.ForeignKey("items.id"))
-    event_id = db.Column(db.Integer, db.ForeignKey("events.id"), nullable=False)
+    event_id = db.Column(db.Integer, db.ForeignKey("events.id"))
     name = db.Column(db.String(100), nullable=False)
     positive_contingency = db.Column(db.String(500))
     negative_contingency = db.Column(db.String(500))

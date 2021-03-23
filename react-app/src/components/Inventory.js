@@ -53,8 +53,8 @@ function Inventory () {
     }
 
     return(
-        <div>
-            <div>Inventory</div>
+        <div className="outer-outer">
+            {/* <div className="inventory_title">Inventory</div> */}
             <div className="outer_inventory_box">
                 {allItems && allItems.map((item) => (
                      <div key={item.id} className="inventory_tile">

@@ -1,40 +1,17 @@
 import "../images/house_icon.png";
 import "./styling/map.css";
 import React, { useEffect, useState } from "react";
-// import { useDispatch } from "react-redux";
+import {  Drawer, Button  } from 'antd';
+import 'antd/dist/antd.css';
 import {NavLink} from "react-router-dom";
 import Inventory from "./Inventory";
 
 function Maps() {
-    // const dispatch = useDispatch();
-    const [locations, setLocations] = useState([])
+    // const [locations, setLocations] = useState([])
 
-    // useEffect(()=>{
-    //     dispatch(seeLocation())
-    // },[]);
-
-    // useEffect(() => {
-    //     async function fetchData() {
-    //       const response = await fetch("/api/location/");
-    //       const responseData = await response.json();
-    //       setLocations(responseData.locations);
-    //     }
-    //     fetchData();
-    //   }, []);
-
-    //   const locationComponents = locations.map((location) => {
-    //       return (
-    //         <div key={location.id}>
-    //           <NavLink to={`/${location.id}/events`}>{location.name}</NavLink>
-    //         </div>
-    //       )
-    //   })
     return (
         <div>
-        <Inventory />
         <div className="outer_map">
-            {/* <div>{locationComponents}</div> */}
-            {/* style="background-image: url('../images/house_icon.png')" */}
             <NavLink className="map_tile house_img" to={`/4/events`}>
                 <div className='location_name'>
                     Dormitory

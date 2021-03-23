@@ -78,7 +78,7 @@ function App() {
           <NavBar />
           <Options />
         </ProtectedRoute>
-        <ProtectedRoute path="/hire-me" exact={true} >
+        <ProtectedRoute path="/:charId/hire-me" exact={true} >
           <EasterEgg />
         </ProtectedRoute>
       </Switch>

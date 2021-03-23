@@ -1,13 +1,20 @@
+.outer-outer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .outer_inventory_box {
   display: grid;
   /* grid-gap: 2em; */
-  margin-left: 18vh;
-  margin-right: 18vh;
-  grid-template-columns: repeat(5, 1fr);
+  margin-left: 10vh;
+  margin-right: 10vh;
+  grid-template-columns: repeat(2, 1fr);
   max-width: max-content;
-  width: 80vw;
+  /* width: 20vw; */
   background: rgb(26, 26, 26);
   border-radius: 15%;
+  justify-content: center;
 }
 
 .inventory_tile {

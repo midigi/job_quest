@@ -4,6 +4,7 @@ import LogoutButton from './auth/LogoutButton';
 import { Drawer, Menu, Dropdown, Modal, Button } from "antd";
 import Inventory from "./Inventory"
 import "./styling/navbar.css"
+// import {inventory_icon} from "../../images/inventory_bag_icon.png";
 // import { useSelector, useDispatch } from "react-redux";
 
 const NavBar = () => {
@@ -26,6 +27,13 @@ const NavBar = () => {
             Home
           </NavLink>
         </Button>
+
+        <Button>
+        <NavLink to="/character" exact={true} activeClassName="active">
+            Create Character
+          </NavLink>
+        </Button>
+
         <Button>
         <NavLink to="/profile" exact={true} activeClassName="active">
             Profile
@@ -37,8 +45,13 @@ const NavBar = () => {
           </NavLink>
         </Button> */}
 
-            <Button onClick={showDrawer}>
-            Inventory
+            <Button
+              // className="inventory_button"
+              // style={{"background-image: url(https://icon-library.com/images/inventory-bag-2-512.png)"}}
+              onClick={showDrawer}
+            >
+              <img className="inventory_button" src="https://icon-library.com/images/inventory-bag-2-512.png" />
+              {/* <span className="inventory_button"></span> */}
             </Button>
           <Drawer
             title="Inventory"

@@ -28,6 +28,7 @@ function Inventory () {
         }
         fetchInventory();
       }, [activeCharacter]);
+    //   add inventory to the dependency to have state update immediately, but goes infinite
 
     useEffect(()=> {
         async function fetchItems(){
@@ -39,7 +40,7 @@ function Inventory () {
             }
         }
         fetchItems();
-    }, [activeCharacter]);
+    }, [activeCharacter, inventory]);
 
     const addColor = (special) => {
         const color = document.getElementsByTagName("img");

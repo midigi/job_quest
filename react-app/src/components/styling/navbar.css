@@ -1,3 +1,13 @@
 .nav_menu{
-    background:black;
+    background:white;
+}
+
+.inventory_button{
+    /* background-image: url("../../images/inventory_bag_icon.png"); */
+    /* https://icon-library.com/images/inventory-bag-2-512.png */
+    width: 40px;
+    height: 40px;
+
+    /* background-size: contain;
+    background-position: center; */
 }

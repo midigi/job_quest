@@ -50,6 +50,7 @@ function Profile(){
 
             <div>
                 <div>Additional Characters</div>
+                <div className="outer_profile">
                 {characters && characters.map((character) => (
                     <div key={character.id}>
                         <button onClick={setActiveCharacter(character.id)}>
@@ -62,7 +63,8 @@ function Profile(){
                         <div>Wisdom: {character.wisdom}</div> */}
                     </div>
                 ))}
-                <Inventory />
+                </div>
+                {/* <Inventory /> */}
             </div>
         </div>
     )

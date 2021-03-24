@@ -8,6 +8,7 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import Home from "./components/Home";
 import Inventory from "./components/Inventory";
+import Character from "./components/Character";
 import Profile from "./components/profile";
 import Events from "./components/Event";
 import Options from "./components/Option";
@@ -69,6 +70,10 @@ function App() {
         <ProtectedRoute path="/profile" exact={true} >
           <NavBar />
           <Profile />
+        </ProtectedRoute>
+        <ProtectedRoute path="/character" exact={true} >
+          <NavBar />
+          <Character />
         </ProtectedRoute>
         <ProtectedRoute path="/:id/events" exact={true} >
           <NavBar />

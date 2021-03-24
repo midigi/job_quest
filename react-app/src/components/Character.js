@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 // import { createCharacter } from "../store/character";
 
 const createCharForm = () => {
-    const [characterName, setCharacterName] = useState("");
-    const [characterUrl, setCharacterUrl] = useState("https://webstockreview.net/images/student-clipart-college-student-2.png");
-    const dispatch = useDispatch();
-}
+    // const [characterName, setCharacterName] = useState("");
+    // const [characterUrl, setCharacterUrl] = useState("https://webstockreview.net/images/student-clipart-college-student-2.png");
+    // const dispatch = useDispatch();
+
 
 // const onCharCreation = async (e) => {
 //     e.preventDefault();
@@ -32,4 +32,7 @@ return (
 
         </form> */}
     </div>
-)
+    )
+}
+
+export default createCharForm;

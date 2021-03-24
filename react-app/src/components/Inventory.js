@@ -4,7 +4,7 @@ import {createInventory, setItems, setInventory} from "../store/inventory";
 import { useParams } from "react-router-dom";
 import "./styling/inventory.css";
 import 'antd/dist/antd.css';
-import { Popover, Button } from 'antd';
+import { Popover, Button, message } from 'antd';
 // import "./styling/option.css"
 
 function Inventory () {
@@ -15,14 +15,12 @@ function Inventory () {
     const allItems = useSelector((state) => state.inventory.allItems);
     const activeCharacter = useSelector((state) => state.character.character);
     const characterInfo = useSelector((state)=> state.character.characters);
-    // console.log("--CHARACTERINFO----", characterInfo)
 
     useEffect(() => {
         async function fetchInventory(){
             if (activeCharacter){
                 const res = await fetch(`/api/character/${activeCharacter}/items`)
                 const resData = await res.json();
-                // console.log("Inventory_______", resData)
                 dispatch(setInventory(resData.items))
             }
         }
@@ -35,8 +33,10 @@ function Inventory () {
             if(activeCharacter){
                 const res = await fetch(`/api/inventory/`)
                 const resData = await res.json();
-                // console.log("api inventory------", resData)
                 dispatch(setItems(resData.allItems))
+            }
+            else{
+                message.error("Set an active character")
             }
         }
         fetchItems();

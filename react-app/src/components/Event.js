@@ -13,13 +13,9 @@ function Events () {
         async function fetchEvents(){
             const res = await fetch(`/api/location/${eventId.id}/events`)
             const resData = await res.json();
-            // console.log("events_______", resData)
             setEvents(resData.events)
         }
         fetchEvents();
-        // console.log("---eventID----", eventId)
-        // const loc_ev = dispatch(seeLocationEvents(eventId.id));
-        // console.log("!!!!!!", loc_ev)
       }, [eventId]);
 
     const eventComponents = events.map((event) =>{

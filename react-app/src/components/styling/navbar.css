@@ -1,12 +1,21 @@
 .nav_menu{
-    background:white;
+    background-color: rgba(255, 255, 255, 0.15);
+    height: 70px;
+}
+
+.ant-menu-vertical > .ant-menu-item{
+    height: 70px;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 .inventory_button{
     /* background-image: url("../../images/inventory_bag_icon.png"); */
     /* https://icon-library.com/images/inventory-bag-2-512.png */
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
 
     /* background-size: contain;
     background-position: center; */

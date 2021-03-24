@@ -1,6 +1,7 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from app.models import Character, Item, characterItems, Option, db
+from app.forms import CharacterForm
 
 character_routes = Blueprint('character', __name__)
 
@@ -16,12 +17,20 @@ def getCharacter(id):
     character = Character.query.get(id)
     return {"character": character.to_dict()}
 
+
 @character_routes.route('/', methods=["POST"])
 @login_required
 def postCharacter():
-    # TO DO
-    # create form first
-    return {"key": "error"}
+    form=CharacterForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        data = Character()
+        form.populate_obj(data)
+        print("testing form------", str(form))
+        db.session.add(data)
+        db.session.commit()
+        return data.to_dict()
+    return {"error": 'Invalid Information'}, 400
 
 
 @character_routes.route('/<int:charId>/<int:optionId>')

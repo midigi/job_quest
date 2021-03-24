@@ -5,27 +5,27 @@
 
 .character_img {
   transition: 0.3s;
-  height: 250px;
-  width: 225px;
+  height: 225px;
+  width: 215px;
   display: flex;
 }
 .character_img_active{
-    height: 250px;
-    width: 225px;
+    height: 225px;
+    width: 215px;
     transition: 0.3s;
     border: 1px solid red;
     display: flex;
 }
 
 .character_img:hover {
-  height: 275px;
-  width: 250px;
+  height: 250px;
+  width: 225px;
   cursor: pointer;
   display: flex;
 }
 
 .character_img_active:hover{
-    height: 275px;
-    width: 250px;
+    height: 250px;
+    width: 225px;
     display: flex;
 }

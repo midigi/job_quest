@@ -17,22 +17,17 @@ function Options () {
 
     useEffect(() => {
         async function fetchOptions(){
-            // console.log("option page eventid", eventId)
             const res = await fetch(`/api/option/${eventId.id}`)
             const resData = await res.json();
-            // console.log("options_______", resData)
             setOptions(resData.options)
         }
         fetchOptions();
       }, []);
 
       const clicky = async (optionId) => {
-        //   console.log("option---", optionId)
-        // console.log("charid---", activeCharacterId)
         dispatch(optionDecider(activeCharacterId, optionId))
         history.push("/");
         // TODO dispatch setInventory again to instantly update inventory
-        // Also show inventory on this page
       }
 
     return(
@@ -42,7 +37,6 @@ function Options () {
                 <div className="outer_option_box">
                     {options && options.map((option, index) => (
                         <div key={option.id} onClick={()=>clicky(option.id)}>
-                            {/* {console.log("option", option)} */}
                             <div className="option_tile">
                                 {option.name}
                             </div>

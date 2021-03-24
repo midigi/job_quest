@@ -49,6 +49,7 @@ const NavBar = () => {
               // className="inventory_button"
               // style={{"background-image: url(https://icon-library.com/images/inventory-bag-2-512.png)"}}
               onClick={showDrawer}
+              type="text"
             >
               <img className="inventory_button" src="https://icon-library.com/images/inventory-bag-2-512.png" />
               {/* <span className="inventory_button"></span> */}

@@ -6,27 +6,19 @@ import Inventory from "./Inventory";
 import "./styling/profile.css";
 
 function Profile(){
-    // const characterId = useParams();
-    // const [characters, setCharacters] = useState([]);
     const characters = useSelector((state) => Object.values(state.character.characters));
     const activeCharacter = useSelector((state) => state.character.character);
-    const [activeChar, setActiveChar] = useState("active");
-    // ToDo need to pre-select active character during character CRUD set up
-    // const activeChar = useSelector((state) => Object.values(state.character.character));
+    // const [activeChar, setActiveChar] = useState("active");
     const dispatch = useDispatch()
-    console.log("this ist he active char id", activeCharacter)
-
 
     const setActiveCharacter = (id) => (e) => {
         dispatch(setCharacter(id))
-
     }
 
     useEffect(() => {
         async function fetchCharacters(){
             const res = await fetch(`/api/character/`)
             const resData = await res.json();
-            // console.log('characters-----', resData)
             dispatch(setCharacters(resData.characters))
         }
         fetchCharacters();

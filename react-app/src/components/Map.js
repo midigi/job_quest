@@ -1,16 +1,18 @@
 import "../images/house_icon.png";
 import "./styling/map.css";
-import React, { useEffect, useState } from "react";
-import {  Drawer, Button  } from 'antd';
+import React from "react";
 import 'antd/dist/antd.css';
 import {NavLink} from "react-router-dom";
-import Inventory from "./Inventory";
+import { useSelector } from "react-redux";
+
 
 function Maps() {
     // const [locations, setLocations] = useState([])
+    const activeCharacter = useSelector((state) => state.character.character);
 
     return (
-        <div className="outer_outer">
+        activeCharacter && activeCharacter ? (
+        (<div className="outer_outer">
             {/* Welcome to Job Quest. Explore why don't you? */}
         <div className="outer_map">
             <NavLink className="map_tile house_img" to={`/4/events`}>
@@ -44,6 +46,9 @@ function Maps() {
                 </div>
             </NavLink>
         </div>
+        </div>)) :
+        <div className="alt_outer">
+            <div className="set_char_warning">SET ACTIVE CHARACTER TO PROCEED</div>
         </div>
     )
 }

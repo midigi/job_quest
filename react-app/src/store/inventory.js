@@ -1,5 +1,6 @@
 const SET_INVENTORY = "INVENTORY/setInventory";
 const SET_ITEMS = "INVENTORY/setItems";
+const ADD_ITEM = "INVENTORY/addOneItem";
 
 export const setInventory = (inventory) => ({
     type: SET_INVENTORY,
@@ -9,6 +10,11 @@ export const setInventory = (inventory) => ({
   export const setItems = (items) => ({
     type: SET_ITEMS,
     payload: items,
+  });
+
+  export const addOneItem = (item) => ({
+    type: ADD_ITEM,
+    payload: item,
   });
 
 export const createInventory = ({ characterInfo }) => async (
@@ -26,7 +32,7 @@ export const createInventory = ({ characterInfo }) => async (
 };
 
 
-const initialState = { inventory: null };
+const initialState = { inventory: [] };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
@@ -34,6 +40,8 @@ export default function reducer(state = initialState, action) {
       return { ...state, inventory: action.payload };
     case SET_ITEMS:
       return { ...state, allItems: action.payload };
+    case ADD_ITEM:
+      return { ...state, inventory: [...state.inventory, action.payload]};
     default:
       return state;
   }

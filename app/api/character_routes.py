@@ -32,6 +32,14 @@ def postCharacter():
         return data.to_dict()
     return {"error": 'Invalid Information'}, 400
 
+@character_routes.route('/<int:id>', methods=['DELETE'])
+@login_required
+def delete_character(id):
+    print("made it to the route")
+    char = Character.query.filter_by(id=id).first()
+    db.session.delete(char)
+    db.session.commit()
+    return char.to_dict()
 
 @character_routes.route('/<int:charId>/<int:optionId>')
 @login_required
@@ -39,8 +47,6 @@ def getCharItem(charId, optionId):
     character = Character.query.get(charId)
     charItem = {"items": [item.to_dict() for item in character.items.all()]}
     option = Option.query.get(optionId)
-    # print("option POSITIVE in char routes", option.positive_contingency)
-    # print("option ITEM in char routes", option.item_id)
 
     char_reward = option.reward_item_id
 
@@ -51,30 +57,28 @@ def getCharItem(charId, optionId):
         b = Item.query.get(option.reward_item_id)
         b.characters.append(a)
     else:
-        return option.positive_contingency
-    # print("-----current_user -----", character.items)
-    # print("======char items=====", charItem)
-    # print("======Reward Item=====", Item.query.get(option.reward_item_id))
+        return {"positive": option.positive_contingency, "item": b.to_dict()}
 
     # Make sure reward item hasn't already been collected
     for item in charItem["items"]:
         if (item['id'] == char_reward):
-            return "You already have this item!"
+            return {"positive": "You already have this item!"}
+            # return "You already have this item!"
 
     # Starting point and red-herrings don't need items to have positive contingency
     if (option.item_id is None):
         if (char_reward is not None):
             db.session.add(b)
             db.session.commit()
-            return option.positive_contingency
+            return {"positive": option.positive_contingency, "item": b.to_dict()}
 
     for itemId in charItem['items']:
         # print("======char items.items=====", itemId['id'])
         if (itemId['id'] == option.item_id):
             db.session.add(b)
             db.session.commit()
-            return option.positive_contingency
-    return option.negative_contingency
+            return {"positive": option.positive_contingency, "item": b.to_dict()}
+    return {"negative": option.negative_contingency}
 
 @character_routes.route('/<int:id>/items')
 @login_required

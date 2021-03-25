@@ -84,7 +84,6 @@ return (
                       {genders}
                     </option>
                   ))}
-                   {/* <img className={ inventory && (inventory.map(el => el.id ).includes(item.id) ? "item_img" : "item_img_grey")} src={item.pic_url} /> */}
                 </select>
                 <img style={{maxHeight: '300px'}} src={characterUrl} className="char_image"/>
 

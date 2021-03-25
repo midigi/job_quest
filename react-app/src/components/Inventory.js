@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {createInventory, setItems, setInventory} from "../store/inventory";
-import { useParams } from "react-router-dom";
+import {setItems, setInventory} from "../store/inventory";
 import "./styling/inventory.css";
 import 'antd/dist/antd.css';
-import { Popover, Button, message } from 'antd';
+import { Popover, message } from 'antd';
 // import "./styling/option.css"
 
 function Inventory () {
@@ -26,7 +25,6 @@ function Inventory () {
         }
         fetchInventory();
       }, [activeCharacter]);
-    //   add inventory to the dependency to have state update immediately, but goes infinite
 
     useEffect(()=> {
         async function fetchItems(){
@@ -47,7 +45,6 @@ function Inventory () {
         for(let each of color) {
             if (each.src === special){
                 each.classList.add("item_img");
-                // each.classList.remove("item_img")
             }
 
         }
@@ -55,7 +52,6 @@ function Inventory () {
 
     return(
         <div className="outer-outer">
-            {/* <div className="inventory_title">Inventory</div> */}
             <div className="outer_inventory_box">
                 {allItems && allItems.map((item) => (
                      <div key={item.id} className="inventory_tile">
@@ -66,7 +62,6 @@ function Inventory () {
                                     <div>Description: {item.description}</div>
                                 </>
                             }>
-                            {/* Might need to change inventory && to inventory ? and additional logic based on future test cases */}
                             <img className={ inventory && (inventory.map(el => el.id ).includes(item.id) ? "item_img" : "item_img_grey")} src={item.pic_url} />
                             </Popover>
                         </div>

@@ -27,12 +27,10 @@ function Options () {
       const clicky = async (optionId) => {
         dispatch(optionDecider(activeCharacterId, optionId))
         history.push("/");
-        // TODO dispatch setInventory again to instantly update inventory
       }
 
     return(
         <div>
-            {/* <Inventory /> */}
             <div>Options</div>
                 <div className="outer_option_box">
                     {options && options.map((option, index) => (

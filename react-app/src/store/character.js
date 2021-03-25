@@ -1,4 +1,5 @@
 import { Button, Input, message } from "antd";
+import { addOneItem } from "./inventory";
 
 const ADD_CHARACTER = "character/ADD_CHARACTER"
 const SET_CHARACTER = "character/SET_CHARACTER"
@@ -43,8 +44,17 @@ export const getAllCharacters = () => async (dispatch) =>{
 
 export const optionDecider = (charId, optionId) => async (dispatch) =>{
     const res = await fetch(`/api/character/${charId}/${optionId}`);
-    const data = await res.text()
-    message.success(data)
+    const data = await res.json()
+    if(data.positive){
+      message.success(data.positive)
+      if(data.item){
+        dispatch(addOneItem(data.item))
+      }
+    }
+    if(data.negative){
+      message.error(data.negative)
+    }
+
 };
 
 export const createCharacter = ({
@@ -79,6 +89,18 @@ export const createCharacter = ({
   dispatch(setCharacter(data.id));
   dispatch(addCharacter(char));
 };
+
+export const deleteChar = (charId) => async (dispatch) => {
+  const res = await fetch(`api/character/${charId}`, {
+    method: "DELETE",
+  });
+  const deleted = await res.json();
+  console.log(deleted)
+  
+  const char = await fetch("/api/character/");
+  const data = await char.json();
+  dispatch(setCharacters(data.characters))
+}
 
 const initialState = { character: null, characters: {} };
 

@@ -11,12 +11,27 @@
     background-color: rgba(255, 255, 255, 0.15);
 }
 
-.inventory_button{
-    /* background-image: url("../../images/inventory_bag_icon.png"); */
-    /* https://icon-library.com/images/inventory-bag-2-512.png */
+.home_button{
     width: 45px;
     height: 45px;
+}
 
-    /* background-size: contain;
-    background-position: center; */
+.create_character_button{
+    width: 45px;
+    height: 45px;
+}
+
+.inventory_button{
+    width: 45px;
+    height: 45px;
+}
+
+.profile_button{
+    width: 45px;
+    height: 45px;
+}
+
+.logout_button{
+    width: 45px;
+    height: 45px;
 }

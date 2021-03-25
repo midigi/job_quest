@@ -27,8 +27,8 @@
     right: 0;
     top: 0;
     bottom: 0;
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 125px;
     border-radius: 17%;
     background: linear-gradient(145deg, #31424a, #253137);
     box-shadow:         inset 0 0 40px #000000
@@ -39,13 +39,13 @@
   }
 
 .item_img_grey {
-  height: 100px;
+  height: 90px;
   vertical-align: center;
   filter: grayscale(100%) brightness(25%) opacity(50%) blur(2px);
 }
 .item_img {
   transition: 0.3s;
-  height: 100px;
+  height: 90px;
   min-height: 30px;
   display: block;
   margin: 0 auto;
@@ -57,6 +57,6 @@
 }
 
 .item_img:hover {
-  height: 125px;
+  height: 105px;
   filter: none;
 }

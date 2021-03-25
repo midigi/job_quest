@@ -1,31 +1,42 @@
+.most_outer_profile{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .outer_profile {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  margin: 1vh;
 }
 
 .character_img {
   transition: 0.3s;
-  height: 225px;
-  width: 215px;
+  height: 175px;
+  width: 165px;
   display: flex;
 }
 .character_img_active{
-    height: 225px;
-    width: 215px;
+    height: 175px;
+    width: 165px;
     transition: 0.3s;
     border: 1px solid red;
     display: flex;
 }
 
 .character_img:hover {
-  height: 250px;
-  width: 225px;
+  height: 200px;
+  width: 185px;
   cursor: pointer;
   display: flex;
 }
 
 .character_img_active:hover{
-    height: 250px;
-    width: 225px;
+    height: 200px;
+    width: 185px;
     display: flex;
+}
+
+.profile_name{
+  color: white;
 }

@@ -8,13 +8,20 @@
 
 .option_tile {
   display: grid;
-  max-height: 300px;
-  max-width: 400px;
+  min-height: 150px;
+  min-width: 150px;
   background-color: lightgray;
   padding: 0.5rem;
   border: 1px solid black;
   border-radius: 5px;
-  box-shadow: 5px 5px lightgrey;
+  /* box-shadow: 5px 5px lightgrey; */
+  box-shadow: inset 0 0 40px #000000;
+  margin: 2rem;
+  padding: 3px;
+  align-content: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
 }
 
 .option_tile:hover {

@@ -21,8 +21,8 @@ function Events () {
     const eventComponents = events.map((event) =>{
         return (
             <NavLink to={`/${event.id}/options`}key={event.id} className="event_tile">
-                <h4>Event: {event.name}</h4>
-                <div>Description: {event.description}</div>
+                <h4 className="event_name">{event.name}</h4>
+                <div className="event_description">{event.description}</div>
             </NavLink>
         )
     })

@@ -1,38 +1,50 @@
 .nav_menu{
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.25);
     height: 70px;
 }
 
+.ant-menu-vertical{
+    padding-left: 7rem;
+    padding-right: 7rem;
+}
 .ant-menu-vertical > .ant-menu-item{
-    height: 70px;
+    height: 65px;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
 }
 
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-    background-color: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.10);
+    /* backdrop-filter: blur(5px); */
 }
 
 .home_button{
     width: 45px;
     height: 45px;
+    margin-top: 3px;
 }
 
 .create_character_button{
     width: 45px;
     height: 45px;
+    margin-top: 3px;
 }
 
 .inventory_button{
     width: 45px;
     height: 45px;
+    margin-top: 3px;
 }
 
 .profile_button{
     width: 45px;
     height: 45px;
+    margin-top: 3px;
 }
 
 .logout_button{
     width: 45px;
     height: 45px;
+    margin-top: 3px;
 }

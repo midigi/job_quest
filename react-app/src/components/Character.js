@@ -1,7 +1,9 @@
 import React, {useState} from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
+import { useHistory } from "react-router-dom";
 import { createCharacter } from "../store/character";
 import { message } from "antd";
+import "./styling/character.css";
 
 const Character = () => {
     const [characterName, setCharacterName] = useState("");
@@ -16,6 +18,7 @@ const Character = () => {
     const user_id = useSelector((state) => state.session.user.id)
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const IMAGES_Options = ["Male", "Female"]
     const image_url ={
@@ -48,6 +51,7 @@ const Character = () => {
                 intelligence,
             })
         );
+        history.push("/");
     };
     const handleChange = (e) => {
         setGender(e.target.value)
@@ -57,10 +61,9 @@ const Character = () => {
 return (
     sessionUser && (
         <div className="char_create_box">
-        Hi
         <form className="char_create_form" onSubmit={onCharCreation}>
-            <div>Create Character</div>
-            <div>
+            <div className="char_title">Create Character</div>
+            <div className="inner_char_box">
                 <input
                     name="char_name"
                     className="char_name"
@@ -83,7 +86,7 @@ return (
                   ))}
                    {/* <img className={ inventory && (inventory.map(el => el.id ).includes(item.id) ? "item_img" : "item_img_grey")} src={item.pic_url} /> */}
                 </select>
-                <img style={{maxHeight: '300px'}} src={characterUrl} />
+                <img style={{maxHeight: '300px'}} src={characterUrl} className="char_image"/>
 
                 <button className="char_submit_button" type="submit">
                   Create Character

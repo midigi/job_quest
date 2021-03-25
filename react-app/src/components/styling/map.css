@@ -2,8 +2,8 @@ body {
     background: linear-gradient(-45deg, #bb0505, #ed7636, #f9cd1f, #d52367);
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
-    background-attachment: fixed;
-    z-index: 1;
+    /* background-attachment: fixed; */
+    /* z-index: 1; */
     /* height: 100vh;
     border: 15px solid black; */
  }
@@ -20,6 +20,11 @@ body {
     }
   }
 
+.outer_outer{
+  display: inline-block;
+  width: 100%;
+  }
+
 .map_tile {
   background: rgb(189, 223, 255);
   border-radius: 5%;
@@ -27,7 +32,11 @@ body {
 
 .outer_map {
   height: 77vh;
+  max-width: 850px;
   display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-content: center;
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: repeat(10, 1fr);
   grid-template-areas:

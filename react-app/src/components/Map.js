@@ -10,8 +10,8 @@ function Maps() {
     // const [locations, setLocations] = useState([])
 
     return (
-        <div>
-            Welcome to Job Quest. Explore why don't you?
+        <div className="outer_outer">
+            {/* Welcome to Job Quest. Explore why don't you? */}
         <div className="outer_map">
             <NavLink className="map_tile house_img" to={`/4/events`}>
                 <div className='location_name'>

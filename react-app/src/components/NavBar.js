@@ -43,7 +43,7 @@ const NavBar = () => {
           type="text"
         >
         <NavLink to="/character" exact={true} activeClassName="active">
-          <img className="create_character_button" src="https://lh3.googleusercontent.com/proxy/rxPs4Q9AFstOEkKH9qn4j7OlqFbPlUMsHHiSgfDNRTDgOWH4BayuGnxheHi2aGsyNs_lk7NTqFUioVC3ix6guOO7WAedxELiyOvRwv0QTVtqBo1NYkM" />
+          <img className="create_character_button" src="http://cdn.onlinewebfonts.com/svg/img_504593.png" />
           </NavLink>
         </Button>
 

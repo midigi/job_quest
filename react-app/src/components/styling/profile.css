@@ -40,3 +40,7 @@
 .profile_name{
   color: white;
 }
+
+.delete_button{
+  margin-bottom: 7px;
+}

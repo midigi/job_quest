@@ -38,7 +38,7 @@ function Profile(){
                             <img src={character.pic_url} className={ character.id == activeCharacter ? "character_img_active" : "character_img"} />
                         </button>
                         <div className="profile_name">Name: {character.name}</div>
-                        <button onClick={deleteCharacter(character.id)}>
+                        <button className="delete_button" onClick={deleteCharacter(character.id)}>
                             Delete
                         </button>
                     </div>

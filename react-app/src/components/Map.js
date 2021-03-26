@@ -49,9 +49,15 @@ function Maps() {
         </div>
         </div>)) :
         <div className="alt_outer">
-            <div className="set_char_warning">SET ACTIVE CHARACTER TO PROCEED. Click on the icon in the nav bar and select a character</div>
+            <div className="set_char_warning">Set active character to proceed. Click on the profile icon in the nav bar and select a character.</div>
             <div>
                 <img className="profile_button" src="http://cdn.onlinewebfonts.com/svg/img_206976.png" />
+            </div>
+            <div className="set_char_warning2">Or create a new character.</div>
+            <div>
+                <NavLink to="/character" exact={true} activeClassName="active">
+                    <img className="create_char_button" src="http://cdn.onlinewebfonts.com/svg/img_504593.png" />
+                </NavLink>
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(-45deg, #d00101, #e36f30, #f5ef2e, #d5233e);
+    background: linear-gradient(-45deg, #d00101, #e36f30, #eede2e, #d5233e);
     background-size: 400% 400%;
     animation: gradient 12s ease infinite;
  }
@@ -22,7 +22,8 @@ body {
   }
 
 .map_tile {
-  background: rgb(189, 223, 255);
+  /* background: rgb(189, 223, 255); */
+  /* background: linear-gradient(145deg, #31424a, #253137); */
   border-radius: 5%;
 }
 
@@ -46,9 +47,10 @@ body {
   margin-left: 25vh;
   margin-right: 25vh;
   margin-bottom: 15vh;
-  margin-top: 3vh;
+  margin-top: 5vh;
   border: 1px solid black;
-  background: url("../../images/grass_img.jpeg");
+  background-color: rgba(255, 255, 255, 0.35);
+  /* background: url("../../images/grass_img.jpeg"); */
   border-radius: 2%;
 }
 
@@ -117,4 +119,26 @@ body {
   color: white;
   background-color: black;
   border-radius: 5px;
+}
+
+.alt_outer{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10vh;
+  max-height: 500px;
+  min-height: 175px;
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 5px;
+}
+
+.set_char_warning, .set_char_warning2{
+  font-size: 16px;
+
+}
+
+.create_char_button, .profile_button{
+  width: 45px;
+  height: 45px;
+  margin-top: 3px;
 }

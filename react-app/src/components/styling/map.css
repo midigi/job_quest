@@ -44,11 +44,11 @@ body {
     ". adm adm  . career career . lec lec ."
     ". . . . career career . . . .";
   gap: 5px;
-  margin-left: 25vh;
+  margin-left: 40vh;
   margin-right: 25vh;
   margin-bottom: 15vh;
-  margin-top: 5vh;
-  border: 1px solid black;
+  margin-top: 6vh;
+  border: 1px solid rgb(0, 0, 0);
   background-color: rgba(255, 255, 255, 0.35);
   /* background: url("../../images/grass_img.jpeg"); */
   border-radius: 2%;

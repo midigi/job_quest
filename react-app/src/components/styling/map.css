@@ -127,9 +127,10 @@ body {
   flex-direction: column;
   margin: 10vh;
   max-height: 500px;
-  min-height: 175px;
+  min-height: 225px;
   background-color: rgba(255, 255, 255, 0.35);
   border-radius: 5px;
+  font-size: 30px;
 }
 
 .set_char_warning, .set_char_warning2{

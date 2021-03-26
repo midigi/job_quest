@@ -14,6 +14,7 @@ function Maps() {
         activeCharacter && activeCharacter ? (
         (<div className="outer_outer">
             {/* Welcome to Job Quest. Explore why don't you? */}
+            <div dangerouslySetInnerHTML={{__html: `<!-- Go to .../${activeCharacter}/hire-me to find the easter egg. -->`}} />
         <div className="outer_map">
             <NavLink className="map_tile house_img" to={`/4/events`}>
                 <div className='location_name'>
@@ -48,7 +49,10 @@ function Maps() {
         </div>
         </div>)) :
         <div className="alt_outer">
-            <div className="set_char_warning">SET ACTIVE CHARACTER TO PROCEED</div>
+            <div className="set_char_warning">SET ACTIVE CHARACTER TO PROCEED. Click on the icon in the nav bar and select a character</div>
+            <div>
+                <img className="profile_button" src="http://cdn.onlinewebfonts.com/svg/img_206976.png" />
+            </div>
         </div>
     )
 }

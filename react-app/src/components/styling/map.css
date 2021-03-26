@@ -1,7 +1,7 @@
 body {
-    background: linear-gradient(-45deg, #bb0505, #ed7636, #f9cd1f, #d52367);
+    background: linear-gradient(-45deg, #d00101, #e36f30, #f5ef2e, #d5233e);
     background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
+    animation: gradient 12s ease infinite;
  }
 
   @keyframes gradient {
@@ -28,7 +28,7 @@ body {
 
 .outer_map {
   height: 77vh;
-  max-width: 850px;
+  max-width: 800px;
   display: grid;
   grid-auto-flow: column;
   justify-content: center;

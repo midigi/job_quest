@@ -13,6 +13,7 @@ import Profile from "./components/profile";
 import Events from "./components/Event";
 import Options from "./components/Option";
 import EasterEgg from "./components/EasterEgg";
+import NotFound from "./components/NotFound";
 import {useDispatch} from 'react-redux';
 import { restoreUser } from "./store/session";
 import "antd/dist/antd.css";
@@ -86,6 +87,9 @@ function App() {
         <ProtectedRoute path="/:charId/hire-me" exact={true} >
           <EasterEgg />
         </ProtectedRoute>
+        <ProtectedRoute path="/*">
+            <NotFound />
+          </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );

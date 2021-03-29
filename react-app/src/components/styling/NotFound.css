@@ -1,0 +1,15 @@
+.gif {
+    width: 100vw;
+    height: 100%;
+  }
+
+  .ohNo {
+    width: 100vw;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: arial;
+    font-size: 40px;
+    background: #ffc017;
+  }

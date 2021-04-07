@@ -48,7 +48,7 @@ function Inventory () {
                                     <div>Description: {item.description}</div>
                                 </>
                             }>
-                            <img className={ inventory && (inventory.map(el => el.id ).includes(item.id) ? "item_img" : "item_img_grey")} src={item.pic_url} />
+                            <img className={ inventory && (inventory.map(el => el.id ).includes(item.id) ? "item_img" : "item_img_grey")} src={item.pic_url} alt="inventory_button"/>
                             </Popover>
                         </div>
                     </div>

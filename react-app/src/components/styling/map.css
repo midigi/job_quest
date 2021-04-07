@@ -17,23 +17,22 @@ body {
   }
 
 .outer_outer{
-  display: inline-block;
-  width: 100%;
+  display: flex;
+  width: 100vw;
+  margin-top: 8vh;
   }
 
 .map_tile {
-  /* background: rgb(189, 223, 255); */
-  /* background: linear-gradient(145deg, #31424a, #253137); */
   border-radius: 5%;
 }
 
 .outer_map {
-  height: 77vh;
+  margin: auto;
+  height: 75vh;
+  width: 55vw;
   max-width: 800px;
   display: grid;
   grid-auto-flow: column;
-  justify-content: center;
-  align-content: center;
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: repeat(10, 1fr);
   grid-template-areas:
@@ -44,13 +43,8 @@ body {
     ". adm adm  . career career . lec lec ."
     ". . . . career career . . . .";
   gap: 5px;
-  margin-left: 40vh;
-  margin-right: 25vh;
-  margin-bottom: 15vh;
-  margin-top: 6vh;
   border: 1px solid rgb(0, 0, 0);
   background-color: rgba(255, 255, 255, 0.35);
-  /* background: url("../../images/grass_img.jpeg"); */
   border-radius: 2%;
 }
 

@@ -16,7 +16,6 @@
 
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
     background-color: rgba(255, 255, 255, 0.10);
-    /* backdrop-filter: blur(5px); */
 }
 
 .home_button{

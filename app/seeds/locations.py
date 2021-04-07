@@ -1,7 +1,6 @@
 from werkzeug.security import generate_password_hash
 from app.models import db, Location
 
-# Adds a demo user, you can add other users here if you want
 def seed_locations():
 
     admnOff = Location(name="Admission\'s Office", description='This place helps you find out where you should go!')

@@ -21,21 +21,6 @@ export const setCharacter = (character) => ({
     payload: character,
   });
 
-
-// export const createCharacter = ({ characterName, characterUrl }) => async (
-//     dispatch
-//   ) => {
-//     const res = await fetch("/api/character/create", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({ characterName, characterUrl }),
-//     });
-//     const data = await res.json();
-//     dispatch(setCharacter(data));
-//   };
-
 export const getAllCharacters = () => async (dispatch) =>{
     const res = await fetch("/api/character/");
     const data = await res.json();
@@ -96,7 +81,7 @@ export const deleteChar = (charId) => async (dispatch) => {
   });
   const deleted = await res.json();
   console.log(deleted)
-  
+
   const char = await fetch("/api/character/");
   const data = await char.json();
   dispatch(setCharacters(data.characters))
@@ -112,8 +97,6 @@ function reducer(state = initialState, action) {
       return { ...state, characters: action.payload };
     case ADD_CHARACTER:
       return {...state, characters: {...state.characters, ...action.payload}}
-    case REMOVE_CHARACTER:
-    //ToDo
     default:
       return state;
   }

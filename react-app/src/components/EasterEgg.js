@@ -9,9 +9,6 @@ function EasterEgg() {
     const dispatch = useDispatch();
     const {charId} = useParams();
 
-    // const activeCharacterId = useSelector((state) => state.character.character);
-
-
     useEffect(() => {
         async function grantEasterEgg(){
             dispatch(optionDecider(charId, 13))

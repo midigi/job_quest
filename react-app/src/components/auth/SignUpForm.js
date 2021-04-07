@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-// import { signUp } from '../../services/auth';
 import { createUser, setUser } from "../../store/session";
 import { login } from "../../services/auth";
 import { Button } from "antd";
@@ -30,10 +29,6 @@ const SignUpForm = () => {
       })
       .catch((res) => {
         console.log(res)
-        // const data = await res.json();
-        // if (data && data.errors) {
-        //   newErrors = data.errors;
-        // }
       });
   }
 };
@@ -72,7 +67,7 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className='background'>
+    <div className='background_img'>
       <div className='center_form'>
         <div className='title'>JOB QUEST
         <div className='sub_title'>Sign Up Form

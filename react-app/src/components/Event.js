@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-// import { useDispatch} from "react-redux";
 import { useParams, NavLink } from "react-router-dom";
 import Options from "./Option"
 import "./styling/event.css"
 
 function Events () {
-    // const dispatch = useDispatch();
+
     const eventId = useParams();
     const [events, setEvents] = useState([]);
 

@@ -7,13 +7,11 @@ import { useSelector } from "react-redux";
 
 
 function Maps() {
-    // const [locations, setLocations] = useState([])
     const activeCharacter = useSelector((state) => state.character.character);
 
     return (
         activeCharacter && activeCharacter ? (
         (<div className="outer_outer">
-            {/* Welcome to Job Quest. Explore why don't you? */}
             <div dangerouslySetInnerHTML={{__html: `<!-- Go to .../${activeCharacter}/hire-me to find the easter egg. -->`}} />
         <div className="outer_map">
             <NavLink className="map_tile house_img" to={`/4/events`}>
@@ -49,7 +47,7 @@ function Maps() {
         </div>
         </div>)) :
         <div className="alt_outer">
-            Welcome to Job Quest! 
+            Welcome to Job Quest!
             <div className="set_char_warning">Set active character to proceed. Click on the profile icon in the nav bar and select a character.</div>
             <div>
                 <img className="profile_button" src="http://cdn.onlinewebfonts.com/svg/img_206976.png" />

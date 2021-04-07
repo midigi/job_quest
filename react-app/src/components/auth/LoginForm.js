@@ -37,7 +37,7 @@ const LoginForm = () => {
   }
 
   return (
-    <div className='background'>
+    <div className='background_img'>
       <div className='center_form'>
         <div className='title'>JOB QUEST
         <div className='sub_title'>Log In

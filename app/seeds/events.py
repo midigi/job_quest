@@ -1,7 +1,6 @@
 from werkzeug.security import generate_password_hash
 from app.models import db, Event
 
-# Adds a demo user, you can add other users here if you want
 def seed_events():
 
     getSched = Event(location_id=1, name='Get Class Schedule', description='Get class schedule so you know where to go.')

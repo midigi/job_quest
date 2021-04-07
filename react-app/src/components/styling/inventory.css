@@ -6,12 +6,11 @@
 
 .outer_inventory_box {
   display: grid;
-  /* grid-gap: 2em; */
   margin-left: 10vh;
   margin-right: 10vh;
+  margin-top: 5vh;
   grid-template-columns: repeat(2, 1fr);
   max-width: max-content;
-  /* width: 20vw; */
   background: rgb(26, 26, 26);
   border-radius: 15%;
   justify-content: center;
@@ -32,7 +31,6 @@
     border-radius: 17%;
     background: linear-gradient(145deg, #31424a, #253137);
     box-shadow: inset 0 0 40px #000000;
-    /* box-shadow: 20px 20px 60px #273840, -20px -20px 60px #486878; */
   }
   .item_tile {
       vertical-align: middle;

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {setInventory} from "../store/inventory";
-// import "./styling/option.css"
 import {optionDecider} from "../store/character";
 import Inventory from "../components/Inventory";
 import "./styling/option.css"

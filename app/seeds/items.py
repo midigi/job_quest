@@ -1,7 +1,6 @@
 from werkzeug.security import generate_password_hash
 from app.models import db, Item
 
-# Adds a demo user, you can add other users here if you want
 def seed_items():
 
     homework = Item(name='Homework', description='Homework for your favorite class. Can be used to study to pass a test!', pic_url='https://image.flaticon.com/icons/png/512/2097/2097055.png', cost=0)

@@ -10,7 +10,6 @@
   display: grid;
   max-height: 500px;
   min-height: 175px;
-  /* background-color:#31424a; */
   background-color: rgba(255, 255, 255, 0.75);
   padding: 0.5rem;
   border: 1px solid black;

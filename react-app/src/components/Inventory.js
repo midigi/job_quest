@@ -4,12 +4,9 @@ import {setItems, setInventory} from "../store/inventory";
 import "./styling/inventory.css";
 import 'antd/dist/antd.css';
 import { Popover, message } from 'antd';
-// import "./styling/option.css"
 
 function Inventory () {
     const dispatch = useDispatch();
-    // const eventId = useParams();
-    // const [inventory, setInventory] = useState([]);
     const inventory = useSelector((state) => state.inventory.inventory);
     const allItems = useSelector((state) => state.inventory.allItems);
     const activeCharacter = useSelector((state) => state.character.character);

@@ -12,7 +12,6 @@ export const removeUser = ()=> ({
 
 
 export const createUser = (user) => async (dispatch) => {
-    // const { firstName, lastName, email, password } = user;
     const res = await fetch(`/api/auth/signup`, {
       method: "POST",
       headers: {

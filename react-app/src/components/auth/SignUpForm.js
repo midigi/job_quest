@@ -3,7 +3,6 @@ import { Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { createUser, setUser } from "../../store/session";
 import { login } from "../../services/auth";
-import { Button } from "antd";
 
 const SignUpForm = () => {
   const [username, setUsername] = useState("");

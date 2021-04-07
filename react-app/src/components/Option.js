@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {setInventory} from "../store/inventory";
 import {optionDecider} from "../store/character";
-import Inventory from "../components/Inventory";
 import "./styling/option.css"
 
 function Options () {
@@ -11,7 +9,6 @@ function Options () {
     const eventId = useParams();
     const [options, setOptions] = useState([]);
     const activeCharacterId = useSelector((state) => state.character.character);
-    const items = useSelector((state) => state.inventory.inventory);
     const history = useHistory();
 
     useEffect(() => {
@@ -21,7 +18,7 @@ function Options () {
             setOptions(resData.options)
         }
         fetchOptions();
-      }, []);
+      });
 
       const clicky = async (optionId) => {
         dispatch(optionDecider(activeCharacterId, optionId))

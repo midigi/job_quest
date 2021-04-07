@@ -1,10 +1,9 @@
-import { Button, Input, message } from "antd";
+import { message } from "antd";
 import { addOneItem } from "./inventory";
 
 const ADD_CHARACTER = "character/ADD_CHARACTER"
 const SET_CHARACTER = "character/SET_CHARACTER"
 const SET_CHARACTERS = "character/SET_CHARACTERS"
-const REMOVE_CHARACTER = "character/REMOVE_CHARACTER"
 
 export const setCharacters = (characters) => ({
     type: SET_CHARACTERS,

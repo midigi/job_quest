@@ -32,7 +32,7 @@ const NavBar = () => {
         type="text"
         >
           <NavLink to="/" exact={true} activeClassName="active">
-          <img className="home_button" src="https://pics.freeicons.io/uploads/icons/png/5205410931579605509-512.png" />
+          <img className="home_button" src="https://pics.freeicons.io/uploads/icons/png/5205410931579605509-512.png" alt="home_button" />
           </NavLink>
         </Button>
 
@@ -40,7 +40,7 @@ const NavBar = () => {
           type="text"
         >
         <NavLink to="/character" exact={true} activeClassName="active">
-          <img className="create_character_button" src="http://cdn.onlinewebfonts.com/svg/img_504593.png" />
+          <img className="create_character_button" src="http://cdn.onlinewebfonts.com/svg/img_504593.png" alt="create_char_button" />
           </NavLink>
         </Button>
 
@@ -48,7 +48,7 @@ const NavBar = () => {
           onClick={showProfile}
           type="text"
         >
-          <img className="profile_button" src="http://cdn.onlinewebfonts.com/svg/img_206976.png" />
+          <img className="profile_button" src="http://cdn.onlinewebfonts.com/svg/img_206976.png" alt="profile_button"/>
         </Button>
           <Drawer
             title="Profile"
@@ -66,7 +66,7 @@ const NavBar = () => {
               onClick={showDrawer}
               type="text"
             >
-              <img className="inventory_button" src="https://icon-library.com/images/inventory-bag-2-512.png" />
+              <img className="inventory_button" src="https://icon-library.com/images/inventory-bag-2-512.png" alt="inventory_button"/>
             </Button>
           <Drawer
             title="Inventory"

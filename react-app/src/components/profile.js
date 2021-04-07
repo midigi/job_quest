@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect } from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {setCharacters, setCharacter} from "../store/character";
-import Inventory from "./Inventory";
 import "./styling/profile.css";
 import {deleteChar} from "../store/character";
 
@@ -26,7 +24,7 @@ function Profile(){
             dispatch(setCharacters(resData.characters))
         }
         fetchCharacters();
-    }, []);
+    }, [dispatch]);
 
 
     return (
@@ -35,7 +33,7 @@ function Profile(){
                 {characters && characters.map((character) => (
                     <div key={character.id}>
                         <button onClick={setActiveCharacter(character.id)}>
-                            <img src={character.pic_url} className={ character.id == activeCharacter ? "character_img_active" : "character_img"} />
+                            <img src={character.pic_url} alt="char_img" className={ character.id === activeCharacter ? "character_img_active" : "character_img"} />
                         </button>
                         <div className="profile_name">Name: {character.name}</div>
                         <button className="delete_button" onClick={deleteCharacter(character.id)}>

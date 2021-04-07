@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams, NavLink } from "react-router-dom";
-import Options from "./Option"
 import "./styling/event.css"
 
 function Events () {

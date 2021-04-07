@@ -17,7 +17,7 @@ const LogoutButton = () => {
       onClick={onLogout}
       type="text"
     >
-       <img className="logout_button" src="https://www.iconpacks.net/icons/2/free-exit-logout-icon-2857-thumb.png" />
+       <img className="logout_button" src="https://www.iconpacks.net/icons/2/free-exit-logout-icon-2857-thumb.png" alt="log_out_button"/>
     </Button>
   );
 };

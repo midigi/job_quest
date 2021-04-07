@@ -85,8 +85,7 @@ return (
                     </option>
                   ))}
                 </select>
-                <img style={{maxHeight: '300px'}} src={characterUrl} className="char_image"/>
-
+                <img style={{maxHeight: '300px'}} src={characterUrl} className="char_image" alt="char_img"/>
                 <button className="char_submit_button" type="submit">
                   Create Character
                 </button>

@@ -50,12 +50,12 @@ function Maps() {
             Welcome to Job Quest!
             <div className="set_char_warning">Set active character to proceed. Click on the profile icon in the nav bar and select a character.</div>
             <div>
-                <img className="profile_button" src="http://cdn.onlinewebfonts.com/svg/img_206976.png" />
+                <img className="profile_button" src="http://cdn.onlinewebfonts.com/svg/img_206976.png" alt="profile_button" />
             </div>
             <div className="set_char_warning2">Or create a new character.</div>
             <div>
                 <NavLink to="/character" exact={true} activeClassName="active">
-                    <img className="create_char_button" src="http://cdn.onlinewebfonts.com/svg/img_504593.png" />
+                    <img className="create_char_button" src="http://cdn.onlinewebfonts.com/svg/img_504593.png" alt="create_char_button"/>
                 </NavLink>
             </div>
         </div>

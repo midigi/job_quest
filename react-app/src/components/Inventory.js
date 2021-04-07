@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {setItems, setInventory} from "../store/inventory";
 import "./styling/inventory.css";
@@ -10,7 +10,6 @@ function Inventory () {
     const inventory = useSelector((state) => state.inventory.inventory);
     const allItems = useSelector((state) => state.inventory.allItems);
     const activeCharacter = useSelector((state) => state.character.character);
-    const characterInfo = useSelector((state)=> state.character.characters);
 
     useEffect(() => {
         async function fetchInventory(){
@@ -21,7 +20,7 @@ function Inventory () {
             }
         }
         fetchInventory();
-      }, [activeCharacter]);
+      }, [activeCharacter, dispatch]);
 
     useEffect(()=> {
         async function fetchItems(){
@@ -35,17 +34,7 @@ function Inventory () {
             }
         }
         fetchItems();
-    }, [activeCharacter, inventory]);
-
-    const addColor = (special) => {
-        const color = document.getElementsByTagName("img");
-        for(let each of color) {
-            if (each.src === special){
-                each.classList.add("item_img");
-            }
-
-        }
-    }
+    }, [activeCharacter, inventory, dispatch]);
 
     return(
         <div className="outer-outer">
